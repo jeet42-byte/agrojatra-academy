@@ -105,6 +105,13 @@ thead th { border-top: 0; color: var(--muted); font-weight: 600; }
 .warn h2 { color: var(--signal); }
 .links-official { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
 .note-sm { color: var(--muted); font-size: 0.92rem; }
+
+.site-foot { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: 0.92rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.site-foot .in { max-width: 820px; margin: 0 auto; display: grid; gap: 8px; }
+.site-foot nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.site-foot a { font-weight: 600; }
+.site-foot .small { font-size: 0.85rem; }
 </style>
 </head>
 <body>
@@ -208,5 +215,13 @@ thead th { border-top: 0; color: var(--muted); font-weight: 600; }
     </div>
   </section>
 </main>
+
+<footer class="site-foot">
+  <div class="in">
+    <nav aria-label="সব পেজ"><a href="./">হোম</a><a href="tests.html">ফ্রি মডেল টেস্ট</a><a href="viva.html">ভাইভা প্রস্তুতি</a><a href="issb-plan.html">ISSB পরিকল্পনা</a><a href="recruit.html">নিয়োগ গাইড</a></nav>
+    <p><a href="https://www.facebook.com/profile.php?id=122105123493506189" target="_blank" rel="noopener">Facebook: Agrojatra Academy</a> · WhatsApp: 01846877898</p>
+    <p class="small">© অগ্রযাত্রা একাডেমি। একটি বেসরকারি কোচিং প্রতিষ্ঠান; কোনো সরকারি বাহিনীর সাথে সম্পৃক্ত নয়।</p>
+  </div>
+</footer>
 </body>
 </html>
