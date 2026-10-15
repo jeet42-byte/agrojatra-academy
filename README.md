@@ -1,4 +1,4 @@
-# Shapath Defence Coaching (শপথ ডিফেন্স কোচিং)
+# Agrojatra Academy (অগ্রযাত্রা একাডেমি)
 
 Landing and course page for an online coaching academy covering:
 
@@ -13,9 +13,9 @@ It's one static file (`index.html`) with no build step.
 
 | What | Where in `index.html` |
 | --- | --- |
-| Academy name | `<title>`, `.brand`, footer |
-| WhatsApp number for the enrol form | `var WHATSAPP = "8801XXXXXXXXX"` in the script at the bottom |
-| Number shown for WhatsApp / bKash / Nagad | `<span id="phone">` |
+| Academy name (set: Agrojatra Academy) | `<title>`, `.brand`, footer |
+| WhatsApp number for the enrol form (set) | `var WHATSAPP = "8801846877898"` in the script at the bottom |
+| Number shown for WhatsApp / bKash / Nagad (set) | `<span id="phone">` |
 | Course fees | each `.price` in the Courses section (current values are placeholders) |
 | Subjects per course | the `<ul>` in each course card, check against the latest official circular |
 | Class times | FAQ "ক্লাস কখন হয়?" |
