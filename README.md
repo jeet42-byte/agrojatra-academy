@@ -46,3 +46,7 @@ To add or edit questions, change the `TESTS` list at the top of the script in `t
 ## Viva prep (`viva.html`)
 
 Common viva questions for ISSB, soldier/Ansar and cadet college, each with a tip on how to answer, plus a WAT trainer that shows 20 random words for 15 seconds each. Edit the `WORDS` list in the script to change the words.
+
+## 8-week ISSB plan (`issb-plan.html`)
+
+Week-by-week plan for the officer cadet ISSB course, linked from the three ISSB course cards. Edit the weeks directly in the page.
