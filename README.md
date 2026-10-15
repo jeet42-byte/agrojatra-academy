@@ -42,3 +42,7 @@ To add or edit questions, change the `TESTS` list at the top of the script in `t
 - `agrojatra-logo.png`: full logo for documents and posters (1200 × 400)
 - `agrojatra-profile.png`: Facebook / WhatsApp profile picture (720 × 720)
 - `agrojatra-cover.png`: Facebook cover photo (1640 × 624), also the preview image when the site link is shared
+
+## Viva prep (`viva.html`)
+
+Common viva questions for ISSB, soldier/Ansar and cadet college, each with a tip on how to answer, plus a WAT trainer that shows 20 random words for 15 seconds each. Edit the `WORDS` list in the script to change the words.
