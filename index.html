@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agrojatra Academy</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="অগ্রযাত্রা একাডেমি · Agrojatra Academy">
+<meta property="og:description" content="ISSB (সেনা, নৌ, বিমান), সৈনিক, আনসার-ভিডিপি ও ক্যাডেট কলেজ ভর্তির অনলাইন কোচিং। ফ্রি মডেল টেস্ট দিন।">
+<meta property="og:image" content="https://jeet42-byte.github.io/agrojatra-academy/assets/agrojatra-cover.png">
+<meta property="og:type" content="website">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="ISSB (সেনা, নৌ, বিমান), সৈনিক নিয়োগ, আনসার-ভিডিপি এবং ক্যাডেট কলেজ ভর্তির অনলাইন কোচিং।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +68,8 @@ a { color: var(--accent); }
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px; }
 .top .wrap { grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; }
 .brand { font: 400 1.35rem/1 var(--f-mark); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.brand { display: inline-grid; grid-template-columns: auto auto; column-gap: 10px; align-items: center; }
+.brand img { grid-row: span 2; }
 .brand small { display: block; font: 500 0.7rem/1.4 var(--f-body); letter-spacing: 0; color: var(--muted); }
 .nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
@@ -149,7 +156,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#">AGROJATRA<small>অগ্রযাত্রা একাডেমি</small></a>
+    <a class="brand" href="#"><img src="assets/favicon.svg" alt="" width="36" height="36">AGROJATRA<small>অগ্রযাত্রা একাডেমি</small></a>
     <nav class="nav" aria-label="মূল মেনু">
       <a href="#courses">কোর্স</a>
       <a href="tests.html">ফ্রি মডেল টেস্ট</a>

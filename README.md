@@ -34,3 +34,11 @@ The form doesn't need a server. When a student submits it, the page opens WhatsA
 Five timed MCQ tests (ISSB IQ, GK, Math, English, Bangla), one minute per question, with a score and an explanation for every answer at the end. Each visitor's best score is kept in their own browser.
 
 To add or edit questions, change the `TESTS` list at the top of the script in `tests.html`. Each question is `["question", ["option 1", "option 2", "option 3", "option 4"], index of the correct option starting at 0, "explanation"]`.
+
+## Brand files (`assets/`)
+
+- `favicon.svg`: icon used in the browser tab and site header
+- `mark.svg`: the chevron mark on its own (transparent background)
+- `agrojatra-logo.png`: full logo for documents and posters (1200 × 400)
+- `agrojatra-profile.png`: Facebook / WhatsApp profile picture (720 × 720)
+- `agrojatra-cover.png`: Facebook cover photo (1640 × 624), also the preview image when the site link is shared
