@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agrojatra Model Tests</title>
+<meta name="description" content="ISSB, সৈনিক, আনসার ও ক্যাডেট কলেজ প্রস্তুতির ফ্রি MCQ মডেল টেস্ট।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Hind+Siliguri:wght@400;500;600;700&family=Saira+Stencil+One&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same tokens as the main site; one centred 760px column so a question reads like an answer sheet. */
+:root {
+  --bg: #f3f5ef; --surface: #ffffff; --ink: #17201a; --muted: #56615a; --line: #d6dccf;
+  --accent: #1f5a3a; --accent-ink: #ffffff; --signal: #c8312b;
+  --good: #1f7a45; --good-bg: #e3f1e7; --bad: #b3261e; --bad-bg: #f8e3e1;
+  --f-display: "Tiro Bangla", "Noto Serif Bengali", Georgia, serif;
+  --f-body: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  --f-mark: "Saira Stencil One", "Arial Narrow", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55;
+  --good: #6fcf97; --good-bg: #16301f; --bad: #f28b82; --bad-bg: #3a1a18; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55;
+  --good: #6fcf97; --good-bg: #16301f; --bad: #f28b82; --bad-bg: #3a1a18; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.7 var(--f-body); }
+h1, h2 { font-family: var(--f-display); font-weight: 400; line-height: 1.25; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.top { border-bottom: 1px solid var(--line); padding-block: 12px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { font: 400 1.25rem/1 var(--f-mark); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.brand small { display: block; font: 500 0.7rem/1.4 var(--f-body); letter-spacing: 0; color: var(--muted); }
+main { max-width: 760px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 28px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font: 500 0.78rem/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); font-size: 1.1rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer; text-decoration: none;
+  font: 600 1rem/1 var(--f-body); padding: 12px 20px; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
+.btn.enrol { background: var(--signal); color: #fff; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Test list */
+.list { display: grid; gap: 12px; }
+.set { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center; text-align: left; width: 100%;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; cursor: pointer; color: var(--ink); font: inherit; }
+.set:hover { border-color: var(--accent); }
+.set b { font-family: var(--f-display); font-weight: 400; font-size: 1.3rem; }
+.set .meta { grid-column: 1; color: var(--muted); font-size: 0.92rem; }
+.set .go { grid-row: 1 / span 2; grid-column: 2; font: 500 0.85rem var(--f-mono); color: var(--accent); text-align: right; }
+.set .best { font: 500 0.8rem var(--f-mono); color: var(--good); }
+
+/* Question */
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; font: 500 0.9rem var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.timer.low { color: var(--bad); }
+.progress { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.progress i { display: block; height: 100%; background: var(--accent); width: 0; }
+.q { font-family: var(--f-display); font-size: 1.45rem; line-height: 1.45; }
+.opts { display: grid; gap: 10px; }
+.opt { display: grid; grid-template-columns: 2rem 1fr; gap: 10px; align-items: center; text-align: left; width: 100%; font: 500 1.05rem var(--f-body);
+  background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 12px 14px; cursor: pointer; }
+.opt span:first-child { font: 500 0.9rem var(--f-mono); color: var(--muted); }
+.opt[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* Result */
+.score { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.score strong { font: 400 3.4rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.review { display: grid; gap: 14px; }
+.item { border-left: 4px solid var(--line); padding: 4px 0 4px 14px; display: grid; gap: 4px; }
+.item.ok { border-color: var(--good); }
+.item.no { border-color: var(--bad); }
+.item .ans { font-weight: 600; }
+.item .ok-t { color: var(--good); }
+.item .no-t { color: var(--bad); }
+.item .why { color: var(--muted); font-size: 0.95rem; }
+.cta { background: var(--surface); border: 1.5px dashed var(--signal); border-radius: var(--radius); padding: 18px; display: grid; gap: 12px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="brand" href="./">AGROJATRA<small>অগ্রযাত্রা একাডেমি</small></a>
+    <a class="btn enrol" href="./#enrol">ভর্তি হোন</a>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<script>
+(function () {
+  // Each test: id, title, who it is for, and questions [question, options, index of correct option, explanation].
+  var TESTS = [
+    { id: "iq", title: "ISSB IQ টেস্ট", who: "ISSB · সেনা, নৌ, বিমান", q: [
+      ["ধারার পরের সংখ্যাটি কত? ২, ৬, ১২, ২০, ৩০, ?", ["৪০", "৪২", "৩৬", "৪৪"], 1, "পার্থক্য বাড়ছে ৪, ৬, ৮, ১০, ১২ করে। ৩০ + ১২ = ৪২।"],
+      ["কোনটি দলের সাথে মেলে না? আম, কাঁঠাল, লিচু, আলু", ["আম", "কাঁঠাল", "লিচু", "আলু"], 3, "আলু সবজি, বাকিগুলো ফল।"],
+      ["CAT = 24 হলে (A=1, B=2 …) DOG = ?", ["24", "25", "26", "27"], 2, "D(4) + O(15) + G(7) = 26।"],
+      ["৩, ৯, ২৭, ৮১, ?", ["১০৮", "১৬২", "২৪৩", "২৭০"], 2, "প্রতিবার ৩ দিয়ে গুণ: ৮১ × ৩ = ২৪৩।"],
+      ["ঘড়িতে ঠিক ৩টা বাজলে ঘণ্টা ও মিনিটের কাঁটার মধ্যে কোণ কত?", ["৬০°", "৯০°", "১২০°", "১৮০°"], 1, "প্রতি ঘণ্টার ঘর ৩০°। ৩ ঘর × ৩০° = ৯০°।"],
+      ["রহিম করিমের চেয়ে লম্বা, করিম জামালের চেয়ে লম্বা। সবচেয়ে খাটো কে?", ["রহিম", "করিম", "জামাল", "বলা যায় না"], 2, "রহিম > করিম > জামাল।"],
+      ["PEN কে কোডে QFO লেখা হলে BOOK কে কী লেখা হবে?", ["CPPL", "CPPK", "APPL", "CQQL"], 0, "প্রতিটি অক্ষর এক ঘর এগিয়ে: B→C, O→P, O→P, K→L।"],
+      ["বই : লাইব্রেরি :: চিত্রকর্ম : ?", ["শিল্পী", "রং", "আর্ট গ্যালারি", "ফ্রেম"], 2, "বই রাখা হয় লাইব্রেরিতে, চিত্রকর্ম রাখা হয় আর্ট গ্যালারিতে।"],
+      ["১, ৪, ৯, ১৬, ২৫, ?", ["৩০", "৩৪", "৩৬", "৪৯"], 2, "বর্গ সংখ্যা: ৬² = ৩৬।"],
+      ["একজন ৫ কিমি উত্তরে গেল, ডানে ঘুরে ৩ কিমি, আবার ডানে ঘুরে ৫ কিমি গেল। শুরুর জায়গা থেকে সে কোথায়?", ["৩ কিমি পূর্বে", "৩ কিমি পশ্চিমে", "৫ কিমি দক্ষিণে", "শুরুর জায়গায়"], 0, "উত্তর → ডানে পূর্ব → ডানে দক্ষিণ। উত্তর-দক্ষিণ কাটাকাটি, থাকে ৩ কিমি পূর্ব।"],
+      ["কোনটি দলের সাথে মেলে না? ২, ৩, ৫, ৯, ১১", ["২", "৫", "৯", "১১"], 2, "৯ মৌলিক সংখ্যা নয় (৩ × ৩), বাকিগুলো মৌলিক।"],
+      ["আজ সোমবার হলে ১০ দিন পর কী বার?", ["বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"], 1, "৭ দিন পর আবার সোমবার, তারপর আরও ৩ দিন: বৃহস্পতিবার।"]
+    ]},
+    { id: "gk", title: "সাধারণ জ্ঞান: বাংলাদেশ ও প্রতিরক্ষা", who: "সব কোর্স", q: [
+      ["বাংলাদেশের স্বাধীনতা দিবস কবে?", ["২১ ফেব্রুয়ারি", "২৬ মার্চ", "১৬ ডিসেম্বর", "১৪ এপ্রিল"], 1, "২৬ মার্চ ১৯৭১ স্বাধীনতা ঘোষণা করা হয়।"],
+      ["বাংলাদেশ মিলিটারি একাডেমি (BMA) কোথায়?", ["ঢাকা সেনানিবাস", "ভাটিয়ারী, চট্টগ্রাম", "যশোর", "সাভার"], 1, "BMA চট্টগ্রামের ভাটিয়ারীতে।"],
+      ["সশস্ত্র বাহিনী দিবস কবে পালিত হয়?", ["২১ নভেম্বর", "১৬ ডিসেম্বর", "২৬ মার্চ", "৭ মার্চ"], 0, "১৯৭১ সালের ২১ নভেম্বর সেনা, নৌ ও বিমানবাহিনী সম্মিলিতভাবে আক্রমণ শুরু করে।"],
+      ["মুক্তিযুদ্ধে বাংলাদেশকে কয়টি সেক্টরে ভাগ করা হয়েছিল?", ["৯টি", "১০টি", "১১টি", "১২টি"], 2, "১১টি সেক্টর।"],
+      ["বীরশ্রেষ্ঠ খেতাবপ্রাপ্ত মোট কতজন?", ["৫ জন", "৬ জন", "৭ জন", "৮ জন"], 2, "মোট ৭ জন বীরশ্রেষ্ঠ।"],
+      ["বিমানবাহিনীর বীরশ্রেষ্ঠ কে?", ["মোস্তফা কামাল", "মতিউর রহমান", "রুহুল আমিন", "নূর মোহাম্মদ শেখ"], 1, "ফ্লাইট লেফটেন্যান্ট মতিউর রহমান।"],
+      ["নৌবাহিনীর বীরশ্রেষ্ঠ কে?", ["রুহুল আমিন", "হামিদুর রহমান", "মুন্সী আব্দুর রউফ", "মহিউদ্দীন জাহাঙ্গীর"], 0, "ইঞ্জিনরুম আর্টিফিসার মোহাম্মদ রুহুল আমিন।"],
+      ["বাংলাদেশ নৌবাহিনী একাডেমি কোথায়?", ["পতেঙ্গা, চট্টগ্রাম", "খুলনা", "ঢাকা", "কক্সবাজার"], 0, "চট্টগ্রামের পতেঙ্গায়।"],
+      ["বাংলাদেশ বিমানবাহিনী একাডেমি কোথায়?", ["ঢাকা", "যশোর", "চট্টগ্রাম", "সিলেট"], 1, "যশোরে।"],
+      ["ISSB-এর সদর দপ্তর কোথায়?", ["ঢাকা সেনানিবাস", "চট্টগ্রাম সেনানিবাস", "যশোর সেনানিবাস", "রংপুর সেনানিবাস"], 0, "ঢাকা সেনানিবাসে।"],
+      ["বাংলাদেশে বর্তমানে কয়টি বিভাগ?", ["৬টি", "৭টি", "৮টি", "৯টি"], 2, "৮টি বিভাগ।"],
+      ["দেশের প্রথম ক্যাডেট কলেজ কোনটি?", ["ঝিনাইদহ", "মির্জাপুর", "ফৌজদারহাট", "রাজশাহী"], 2, "ফৌজদারহাট ক্যাডেট কলেজ, ১৯৫৮ সালে প্রতিষ্ঠিত।"],
+      ["বাংলাদেশে মোট ক্যাডেট কলেজ কয়টি?", ["১০টি", "১১টি", "১২টি", "১৪টি"], 2, "১২টি: ৯টি ছেলেদের, ৩টি মেয়েদের।"],
+      ["জাতীয় সংগীতের রচয়িতা কে?", ["কাজী নজরুল ইসলাম", "রবীন্দ্রনাথ ঠাকুর", "জসীমউদ্দীন", "দ্বিজেন্দ্রলাল রায়"], 1, "‘আমার সোনার বাংলা’ লিখেছেন রবীন্দ্রনাথ ঠাকুর।"]
+    ]},
+    { id: "math", title: "গণিত", who: "সৈনিক · আনসার · ISSB প্রিলি · ক্যাডেট", q: [
+      ["৪৮০ এর ২৫% কত?", ["১০০", "১২০", "১৪০", "১৬০"], 1, "৪৮০ × ২৫/১০০ = ১২০।"],
+      ["৬৪ টাকা ৩ : ৫ অনুপাতে ভাগ করলে বড় অংশ কত?", ["২৪", "৩৫", "৪০", "৪৪"], 2, "মোট ৮ ভাগ, এক ভাগ ৮ টাকা। ৫ × ৮ = ৪০।"],
+      ["৪০০ টাকায় কিনে ৫০০ টাকায় বিক্রি করলে লাভ কত শতাংশ?", ["২০%", "২৫%", "১০০%", "৫০%"], 1, "লাভ ১০০, (১০০ ÷ ৪০০) × ১০০ = ২৫%।"],
+      ["১০, ২০, ৩০, ৪০ এর গড় কত?", ["২০", "২৫", "৩০", "১০০"], 1, "যোগফল ১০০ ÷ ৪ = ২৫।"],
+      ["ঘণ্টায় ৬০ কিমি বেগে ২.৫ ঘণ্টায় কত দূর যাওয়া যায়?", ["১২০ কিমি", "১৩০ কিমি", "১৫০ কিমি", "১৬০ কিমি"], 2, "৬০ × ২.৫ = ১৫০ কিমি।"],
+      ["৫,০০০ টাকার ১০% হারে ২ বছরের সরল মুনাফা কত?", ["৫০০", "১,০০০", "১,০৫০", "২,০০০"], 1, "৫০০০ × ১০ × ২ ÷ ১০০ = ১,০০০।"],
+      ["১২ ও ১৮ এর ল.সা.গু কত?", ["৬", "২৪", "৩৬", "২১৬"], 2, "১২ = ২²×৩, ১৮ = ২×৩²। ল.সা.গু = ২²×৩² = ৩৬।"],
+      ["√১৪৪ = ?", ["১১", "১২", "১৩", "১৪"], 1, "১২ × ১২ = ১৪৪।"],
+      ["১২ মিটার লম্বা ও ৮ মিটার চওড়া আয়তক্ষেত্রের ক্ষেত্রফল কত?", ["৪০ বর্গমিটার", "৮০ বর্গমিটার", "৯৬ বর্গমিটার", "১০০ বর্গমিটার"], 2, "দৈর্ঘ্য × প্রস্থ = ১২ × ৮ = ৯৬।"],
+      ["৫ জন লোক একটি কাজ ১২ দিনে করে। ১০ জন সেই কাজ কত দিনে করবে?", ["৪ দিন", "৬ দিন", "২৪ দিন", "১০ দিন"], 1, "লোক দ্বিগুণ হলে সময় অর্ধেক: ৬ দিন।"]
+    ]},
+    { id: "eng", title: "English", who: "সব কোর্স", q: [
+      ["Synonym of \"Brave\":", ["Coward", "Courageous", "Weak", "Lazy"], 1, "Brave = courageous (সাহসী)।"],
+      ["Antonym of \"Victory\":", ["Win", "Success", "Defeat", "Triumph"], 2, "Victory (বিজয়) এর বিপরীত Defeat (পরাজয়)।"],
+      ["He ___ to school every day.", ["go", "goes", "going", "gone"], 1, "Third person singular, present indefinite: goes।"],
+      ["Plural of \"child\":", ["childs", "childes", "children", "childrens"], 2, "Child এর plural children।"],
+      ["Correct spelling:", ["Leiutenant", "Lieutenant", "Lieutenent", "Lutenant"], 1, "Lieutenant (লেফটেন্যান্ট)।"],
+      ["Past tense of \"run\":", ["runned", "ran", "run", "running"], 1, "run, ran, run।"],
+      ["She is fond ___ music.", ["of", "in", "at", "with"], 0, "Fond of: কোনো কিছু পছন্দ করা।"],
+      ["\"আমি আমার দেশকে ভালোবাসি\" এর সঠিক অনুবাদ:", ["I loves my country.", "I love my country.", "I am love my country.", "I loving my country."], 1, "Subject I এর সাথে verb love।"],
+      ["___ honest man is respected.", ["A", "An", "The", "No article"], 1, "Honest এর h উচ্চারিত হয় না, তাই an।"],
+      ["Passive of \"He writes a letter.\":", ["A letter is written by him.", "A letter was written by him.", "A letter is wrote by him.", "A letter written by him."], 0, "Present indefinite passive: is + past participle।"]
+    ]},
+    { id: "bangla", title: "বাংলা", who: "সৈনিক · আনসার · ক্যাডেট", q: [
+      ["‘সূর্য’ শব্দের সমার্থক কোনটি?", ["শশী", "রবি", "নীর", "অনল"], 1, "রবি, দিবাকর, ভানু: সূর্যের সমার্থক।"],
+      ["‘উন্নতি’ শব্দের বিপরীত শব্দ কোনটি?", ["প্রগতি", "অবনতি", "উন্নয়ন", "বৃদ্ধি"], 1, "উন্নতি ↔ অবনতি।"],
+      ["বাংলাদেশের জাতীয় কবি কে?", ["রবীন্দ্রনাথ ঠাকুর", "কাজী নজরুল ইসলাম", "জীবনানন্দ দাশ", "জসীমউদ্দীন"], 1, "কাজী নজরুল ইসলাম।"],
+      ["‘বিদ্যালয়’ শব্দের সন্ধিবিচ্ছেদ কোনটি?", ["বিদ্য + আলয়", "বিদ্যা + আলয়", "বিদ্যা + লয়", "বিদ + আলয়"], 1, "বিদ্যা + আলয় = বিদ্যালয় (আ + আ = আ)।"],
+      ["বাংলা বর্ণমালায় স্বরবর্ণ কয়টি?", ["১০টি", "১১টি", "১২টি", "৩৯টি"], 1, "স্বরবর্ণ ১১টি, ব্যঞ্জনবর্ণ ৩৯টি।"],
+      ["‘অগ্নি’ শব্দের সমার্থক কোনটি?", ["অনল", "অনিল", "সলিল", "অম্বর"], 0, "অনল মানে আগুন। অনিল মানে বাতাস।"],
+      ["‘গীতাঞ্জলি’ কার রচনা?", ["কাজী নজরুল ইসলাম", "মাইকেল মধুসূদন দত্ত", "রবীন্দ্রনাথ ঠাকুর", "বঙ্কিমচন্দ্র চট্টোপাধ্যায়"], 2, "এই কাব্যের ইংরেজি অনুবাদের জন্য রবীন্দ্রনাথ ১৯১৩ সালে নোবেল পান।"],
+      ["ভাষা আন্দোলন কোন সালে হয়?", ["১৯৪৭", "১৯৫২", "১৯৬৬", "১৯৭১"], 1, "২১ ফেব্রুয়ারি ১৯৫২।"],
+      ["‘যে বেশি কথা বলে’ এক কথায় কী?", ["বাগ্মী", "বাচাল", "মিতভাষী", "মুখর"], 1, "বাচাল। বাগ্মী মানে যিনি সুন্দর করে বক্তৃতা দিতে পারেন।"],
+      ["‘দিন’ শব্দের বিপরীত শব্দ কোনটি?", ["সন্ধ্যা", "রাত", "সকাল", "দুপুর"], 1, "দিন ↔ রাত।"]
+    ]}
+  ];
+  var SECONDS_PER_Q = 60;
+  var LETTERS = ["ক", "খ", "গ", "ঘ"];
+  var BN = "০১২৩৪৫৬৭৮৯";
+  function bn(n) { return String(n).replace(/\d/g, function (d) { return BN[d]; }); }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+  var app = document.getElementById("app");
+  var state = null, tick = null;
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  function home() {
+    clearInterval(tick); state = null; app.innerHTML = "";
+    var head = el("div"); head.style.cssText = "display:grid;gap:10px";
+    head.appendChild(el("p", "eyebrow", "Free model tests"));
+    head.appendChild(el("h1", null, "ফ্রি মডেল টেস্ট")); head.lastChild.style.fontSize = "2.2rem";
+    head.appendChild(el("p", "lede", "প্রতি প্রশ্নে ১ মিনিট। শেষে নম্বর আর প্রতিটি প্রশ্নের ব্যাখ্যা দেখতে পাবেন।"));
+    app.appendChild(head);
+    var list = el("div", "list");
+    TESTS.forEach(function (t) {
+      var b = el("button", "set"); b.type = "button";
+      b.appendChild(el("b", null, t.title));
+      var go = el("span", "go", "শুরু করুন →"); b.appendChild(go);
+      var meta = el("span", "meta", t.who + " · " + bn(t.q.length) + "টি প্রশ্ন · " + bn(t.q.length) + " মিনিট");
+      var best = store("agrojatra-best-" + t.id);
+      if (best) { meta.appendChild(document.createTextNode(" · ")); meta.appendChild(el("span", "best", "সেরা: " + bn(best) + "/" + bn(t.q.length))); }
+      b.appendChild(meta);
+      b.addEventListener("click", function () { start(t); });
+      list.appendChild(b);
+    });
+    app.appendChild(list);
+  }
+
+  function start(t) {
+    state = { t: t, i: 0, answers: new Array(t.q.length).fill(null), left: t.q.length * SECONDS_PER_Q };
+    clearInterval(tick);
+    tick = setInterval(function () { state.left--; drawTimer(); if (state.left <= 0) finish(); }, 1000);
+    draw(); window.scrollTo(0, 0);
+  }
+
+  function drawTimer() {
+    var t = document.getElementById("timer"); if (!t) return;
+    var m = Math.floor(state.left / 60), s = state.left % 60;
+    t.textContent = "সময় বাকি " + bn(m) + ":" + bn(String(s).padStart(2, "0"));
+    t.classList.toggle("low", state.left <= 60);
+  }
+
+  function draw() {
+    var t = state.t, i = state.i, item = t.q[i];
+    app.innerHTML = "";
+    var bar = el("div", "bar");
+    bar.appendChild(el("span", null, t.title + " · প্রশ্ন " + bn(i + 1) + "/" + bn(t.q.length)));
+    var tm = el("span", "timer"); tm.id = "timer"; bar.appendChild(tm);
+    app.appendChild(bar);
+    var pr = el("div", "progress"), fill = el("i"); fill.style.width = ((i + 1) / t.q.length * 100) + "%"; pr.appendChild(fill); app.appendChild(pr);
+    app.appendChild(el("p", "q", item[0]));
+    var opts = el("div", "opts");
+    item[1].forEach(function (o, k) {
+      var b = el("button", "opt"); b.type = "button";
+      b.setAttribute("aria-pressed", state.answers[i] === k ? "true" : "false");
+      b.appendChild(el("span", null, LETTERS[k])); b.appendChild(el("span", null, o));
+      b.addEventListener("click", function () { state.answers[i] = k; draw(); });
+      opts.appendChild(b);
+    });
+    app.appendChild(opts);
+    var nav = el("div", "nav");
+    var prev = el("button", "btn ghost", "← আগের"); prev.type = "button"; prev.disabled = i === 0;
+    prev.addEventListener("click", function () { state.i--; draw(); });
+    var last = i === t.q.length - 1;
+    var next = el("button", "btn" + (last ? " enrol" : ""), last ? "জমা দিন" : "পরের →"); next.type = "button";
+    next.addEventListener("click", function () { if (last) finish(); else { state.i++; draw(); } });
+    nav.appendChild(prev); nav.appendChild(next);
+    app.appendChild(nav);
+    drawTimer();
+  }
+
+  function finish() {
+    clearInterval(tick);
+    var t = state.t, right = 0;
+    t.q.forEach(function (item, k) { if (state.answers[k] === item[2]) right++; });
+    var prevBest = Number(store("agrojatra-best-" + t.id) || 0);
+    if (right > prevBest) store("agrojatra-best-" + t.id, String(right));
+    app.innerHTML = "";
+    app.appendChild(el("p", "eyebrow", t.title + " · ফলাফল"));
+    var sc = el("div", "score");
+    sc.appendChild(el("strong", null, bn(right) + "/" + bn(t.q.length)));
+    var pct = Math.round(right / t.q.length * 100);
+    sc.appendChild(el("span", "lede", pct >= 80 ? "চমৎকার! এভাবেই চালিয়ে যান।" : pct >= 50 ? "ভালো, তবে আরও অনুশীলন দরকার।" : "নিয়মিত অনুশীলন করলে উন্নতি হবে।"));
+    app.appendChild(sc);
+
+    var cta = el("div", "cta");
+    cta.appendChild(el("p", null, "পূর্ণ প্রস্তুতির জন্য লাইভ ক্লাস, আরও মডেল টেস্ট আর মক ভাইভা পাবেন আমাদের কোর্সে।"));
+    var row = el("div", "nav");
+    var enrol = el("a", "btn enrol", "ভর্তি হোন"); enrol.href = "./#enrol";
+    var again = el("button", "btn ghost", "অন্য টেস্ট দিন"); again.type = "button"; again.addEventListener("click", home);
+    row.appendChild(enrol); row.appendChild(again); cta.appendChild(row);
+    app.appendChild(cta);
+
+    app.appendChild(el("h2", null, "উত্তর ও ব্যাখ্যা")); app.lastChild.style.fontSize = "1.5rem";
+    var rv = el("div", "review");
+    t.q.forEach(function (item, k) {
+      var a = state.answers[k], ok = a === item[2];
+      var box = el("div", "item " + (ok ? "ok" : "no"));
+      box.appendChild(el("p", null, bn(k + 1) + ". " + item[0]));
+      var ans = el("p", "ans");
+      if (ok) ans.appendChild(el("span", "ok-t", "✓ সঠিক: " + item[1][item[2]]));
+      else {
+        ans.appendChild(el("span", "no-t", a == null ? "✗ উত্তর দেননি" : "✗ আপনার উত্তর: " + item[1][a]));
+        ans.appendChild(document.createTextNode(" · সঠিক: " + item[1][item[2]]));
+      }
+      box.appendChild(ans);
+      box.appendChild(el("p", "why", item[3]));
+      rv.appendChild(box);
+    });
+    app.appendChild(rv);
+    window.scrollTo(0, 0);
+  }
+
+  home();
+})();
+</script>
+</body>
+</html>

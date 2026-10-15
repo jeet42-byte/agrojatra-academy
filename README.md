@@ -28,3 +28,9 @@ The form doesn't need a server. When a student submits it, the page opens WhatsA
 
 - **GitHub Pages:** push this repo, then Settings → Pages → Deploy from branch `main`, folder `/`.
 - **Netlify:** drag the folder onto app.netlify.com/drop.
+
+## Free model tests (`tests.html`)
+
+Five timed MCQ tests (ISSB IQ, GK, Math, English, Bangla), one minute per question, with a score and an explanation for every answer at the end. Each visitor's best score is kept in their own browser.
+
+To add or edit questions, change the `TESTS` list at the top of the script in `tests.html`. Each question is `["question", ["option 1", "option 2", "option 3", "option 4"], index of the correct option starting at 0, "explanation"]`.
