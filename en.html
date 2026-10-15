@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agrojatra Academy English</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Agrojatra Academy · Online defence coaching">
+<meta property="og:description" content="ISSB, soldier, Ansar-VDP and cadet college preparation online, led by Major (Retd) Ahnaf. Free model tests.">
+<meta property="og:image" content="https://jeet42-byte.github.io/agrojatra-academy/assets/agrojatra-cover.png">
+<meta property="og:type" content="website">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Online coaching for ISSB (Army, Navy, Air Force officer cadet), soldier, sailor, airman and Ansar-VDP recruitment, and cadet college admission in Bangladesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Hind+Siliguri:wght@400;500;600;700&family=Saira+Stencil+One&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a parade-ground grid. Full-width bands, each with a centred 1080px column; service colours (Army / Navy / Air Force) are used only where they identify a service. */
+:root {
+  --bg: #f3f5ef;          /* drill-field paper, faint green bias */
+  --surface: #ffffff;
+  --ink: #17201a;
+  --muted: #56615a;
+  --line: #d6dccf;
+  --accent: #1f5a3a;      /* bottle green */
+  --accent-ink: #ffffff;
+  --signal: #c8312b;      /* flag red, used for enrolment only */
+  --army: #4d5b2a;
+  --navy: #14365c;
+  --air: #2d7fb8;
+  --band: #1b2a20;        /* dark band for the ISSB process */
+  --band-ink: #e9efe6;
+  --band-muted: #a8b5a9;
+
+  --f-display: "Tiro Bangla", "Noto Serif Bengali", Georgia, serif;
+  --f-body: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  --f-mark: "Saira Stencil One", "Arial Narrow", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --step-0: 1rem; --step-1: 1.2rem; --step-2: 1.5rem; --step-3: 2rem; --step-4: clamp(2.2rem, 5vw, 3.4rem);
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55;
+  --army: #9aab5c; --navy: #7aa6d6; --air: #6cbbe9;
+  --band: #0b100c; --band-ink: #e6ece4; --band-muted: #93a196; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55;
+  --army: #9aab5c; --navy: #7aa6d6; --air: #6cbbe9;
+  --band: #0b100c; --band-ink: #e6ece4; --band-muted: #93a196; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--step-0)/1.7 var(--f-body); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; line-height: 1.25; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 64px; }
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 32px; }
+.eyebrow { font: 500 0.78rem/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); max-width: 60ch; font-size: var(--step-1); }
+
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px; }
+.top .wrap { grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; }
+.brand { font: 400 1.35rem/1 var(--f-mark); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.brand { display: inline-grid; grid-template-columns: auto auto; column-gap: 10px; align-items: center; justify-self: start; justify-content: start; }
+.brand img { grid-row: span 2; }
+.brand small { display: block; font: 500 0.7rem/1.4 var(--f-body); letter-spacing: 0; color: var(--muted); }
+.nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
+.nav a:hover { color: var(--accent); }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer; text-decoration: none;
+  font: 600 1rem/1 var(--f-body); padding: 12px 20px; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
+.btn.enrol { background: var(--signal); color: #fff; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+@media (max-width: 760px) { .nav { display: none; } .top .wrap { grid-template-columns: 1fr auto; } }
+
+/* Batch banner */
+.batch { background: var(--signal); color: #fff; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.batch .wrap { grid-template-columns: 1fr auto; gap: 8px 16px; align-items: center; }
+.batch a { color: #fff; font-weight: 700; white-space: nowrap; }
+.batch span { opacity: 0.9; }
+@media (max-width: 620px) { .batch .wrap { grid-template-columns: 1fr; } }
+
+/* Hero */
+.hero .wrap { grid-template-columns: 1.2fr 1fr; align-items: center; gap: 48px; }
+.hero h1 { font-size: var(--step-4); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.ladder { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: grid; gap: 14px; }
+.ladder h2 { font-size: var(--step-1); }
+.rank { display: grid; grid-template-columns: 10px 1fr auto; gap: 12px; align-items: center; padding-block: 6px; border-top: 1px dashed var(--line); }
+.rank:first-of-type { border-top: 0; }
+.rank i { width: 10px; height: 10px; border-radius: 2px; }
+.rank span:last-child { font: 500 0.8rem var(--f-mono); color: var(--muted); }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+/* Courses */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 960px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+.course { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: grid; gap: 12px; grid-template-rows: auto auto 1fr auto auto; align-content: start; }
+.tag { justify-self: start; font: 500 0.72rem/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 8px; border-radius: 3px; color: var(--surface); background: var(--muted); }
+.tag.army { background: var(--army); } .tag.navy { background: var(--navy); } .tag.air { background: var(--air); } .tag.gen { background: var(--accent); }
+.course h3 { font-size: var(--step-2); }
+.course ul { margin: 0; padding-left: 1.1em; color: var(--muted); }
+.course .foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.price { font: 700 var(--step-1) var(--f-body); font-variant-numeric: tabular-nums; }
+.price del { font-weight: 400; color: var(--muted); font-size: 0.85em; margin-right: 4px; }
+.offer { border: 1.5px dashed var(--signal); border-radius: var(--radius); padding: 12px 16px; max-width: 75ch; }
+.offer b { color: var(--signal); }
+.price small { font-weight: 400; color: var(--muted); font-size: 0.8rem; }
+.course .btn { padding: 10px 14px; font-size: 0.95rem; }
+
+/* Instructor */
+.about { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: center; }
+.about img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.name { font: 700 var(--step-2)/1.3 var(--f-body); }
+.name small { display: block; font-weight: 500; font-size: 1rem; color: var(--muted); }
+.creds { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.creds li::marker { color: var(--signal); }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; gap: 24px; } .about img { max-width: 360px; } }
+
+/* ISSB process */
+.process { background: var(--band); color: var(--band-ink); }
+.process .eyebrow, .process .lede { color: var(--band-muted); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; counter-reset: s; }
+.steps li { counter-increment: s; padding: 20px 18px 4px 0; border-top: 2px solid var(--band-muted); display: grid; gap: 6px; align-content: start; }
+.steps li::before { content: "ধাপ " counter(s, bengali); font: 500 0.78rem var(--f-mono); color: var(--band-muted); }
+.steps b { font-family: var(--f-display); font-weight: 400; font-size: var(--step-1); }
+.steps p { color: var(--band-muted); font-size: 0.95rem; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } .steps li { padding-right: 0; } }
+
+/* What you get */
+.feat { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.feat div { display: grid; gap: 6px; align-content: start; }
+.feat b { font-size: var(--step-1); }
+.feat p { color: var(--muted); }
+@media (max-width: 860px) { .feat { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .feat { grid-template-columns: 1fr; } }
+
+/* Routine */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.routine { width: 100%; min-width: 560px; border-collapse: collapse; }
+.routine th, .routine td { text-align: left; padding: 12px 16px; border-top: 1px solid var(--line); vertical-align: top; }
+.routine thead th { border-top: 0; font: 600 0.9rem/1.4 var(--f-body); color: var(--muted); }
+.routine tbody th { font-weight: 700; white-space: nowrap; }
+.routine .fri { background: var(--bg); }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 8px; vertical-align: 1px; background: var(--muted); }
+.dot.army { background: var(--army); } .dot.gen { background: var(--accent); } .dot.cadet { background: var(--air); }
+.dot.viva { background: var(--navy); } .dot.test { background: var(--signal); }
+
+/* Enrol */
+.enrol-band { background: var(--surface); border-block: 1px solid var(--line); }
+.enrol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+@media (max-width: 860px) { .enrol-grid { grid-template-columns: 1fr; } }
+.pay { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.contact { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font: 500 var(--step-1) var(--f-mono); }
+form { display: grid; gap: 14px; }
+label { display: grid; gap: 6px; font-weight: 600; }
+input, select { font: 400 1rem var(--f-body); padding: 11px 12px; border: 1.5px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--ink); width: 100%; }
+.note { font-size: 0.9rem; color: var(--muted); }
+#formMsg { font-weight: 600; color: var(--accent); }
+
+/* FAQ */
+details { border-top: 1px solid var(--line); padding-block: 14px; }
+details:last-child { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: var(--step-1); }
+details p { color: var(--muted); padding-top: 8px; max-width: 70ch; }
+
+footer { color: var(--muted); font-size: 0.9rem; }
+footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
+@media (max-width: 620px) { footer .wrap { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+.wa-float { position: fixed; z-index: 20; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 999px; background: #1f8f4e; color: #fff;
+  font: 700 1rem/1 var(--f-body); text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+.wa-float:hover { background: #18773f; }
+@media (max-width: 480px) { .wa-float span { display: none; } .wa-float { padding: 14px; } }
+@media print { .wa-float { display: none; } }
+body::after { content: ""; display: block; height: 76px; }
+.steps li::before { content: "Stage " counter(s); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/favicon.svg" alt="" width="36" height="36">AGROJATRA<small>Agrojatra Academy</small></a>
+    <nav class="nav" aria-label="Main menu">
+      <a href="#courses">Courses</a>
+      <a href="tests.html">Free tests</a>
+      <a href="#instructor">Instructor</a>
+      <a href="#issb">ISSB stages</a>
+      <a href="#routine">Routine</a>
+      <a href="#faq">FAQ</a>
+      <a href="./" lang="bn">বাংলা</a>
+    </nav>
+    <a class="btn enrol" href="#enrol">Enrol</a>
+  </div>
+</header>
+
+<main>
+  <div class="batch" id="batch">
+    <div class="wrap">
+      <p><b>New batch starts Saturday, 31 October 2026</b> <span id="batchLeft"></span> · ISSB launch offer ৳2,500 for the first 30 students</p>
+      <a href="#enrol">Reserve your seat →</a>
+    </div>
+  </div>
+
+  <section class="band hero">
+    <div class="wrap">
+      <div style="display:grid;gap:22px;min-width:0">
+        <p class="eyebrow">Online coaching · Live + Recorded</p>
+        <h1>Prepare for <em>ISSB</em>, soldier, Ansar and cadet college exams from home</h1>
+        <p class="lede">Live classes, model tests and personal guidance for the written exam, the viva and every stage of ISSB. Separate batches for the Army, Navy and Air Force.</p>
+        <div class="ctas">
+          <a class="btn enrol" href="#enrol">Enrol now</a>
+          <a class="btn ghost" href="tests.html">Take a free model test</a>
+        </div>
+      </div>
+      <aside class="ladder" aria-label="Courses at a glance">
+        <h2>Who this coaching is for</h2>
+        <div class="rank"><i style="background:var(--army)"></i><span>Army officer cadet (BMA)</span><span>ISSB</span></div>
+        <div class="rank"><i style="background:var(--navy)"></i><span>Navy officer cadet</span><span>ISSB</span></div>
+        <div class="rank"><i style="background:var(--air)"></i><span>Air Force officer cadet</span><span>ISSB</span></div>
+        <div class="rank"><i style="background:var(--accent)"></i><span>Soldier / sailor / airman recruitment</span><span>Written + viva</span></div>
+        <div class="rank"><i style="background:var(--accent)"></i><span>Ansar-VDP recruitment</span><span>Written + viva</span></div>
+        <div class="rank"><i style="background:var(--muted)"></i><span>Cadet college admission (class 7)</span><span>Written + viva</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band" id="courses">
+    <div class="wrap">
+      <div style="display:grid;gap:10px">
+        <p class="eyebrow">Courses</p>
+        <h2 style="font-size:var(--step-3)">Our courses</h2>
+        <p class="lede">Every course combines the written exam, the viva and model tests. Choose the one that matches your goal.</p>
+      </div>
+      <p class="offer"><b>Launch offer:</b> ISSB officer cadet course ৳2,500 (regular ৳3,500) for the first 30 students of the first batch. Model test package only: ৳300.</p>
+      <div class="grid">
+        <article class="course">
+          <span class="tag army">Army · ISSB</span>
+          <h3>Army officer cadet</h3>
+          <ul><li>Preliminary written: Bangla, English, math, general knowledge</li><li>Preliminary viva preparation</li><li>ISSB: IQ, psychology tests, GTO tasks, interview</li></ul>
+          <a href="issb-plan.html" style="font-weight:600">See the 8-week plan (Bangla) →</a>
+          <div class="foot"><span class="price"><del>৳3,500</del> ৳2,500 <small>/ full course</small></span><a class="btn" href="#enrol" data-course="Army officer cadet (ISSB)">Enrol</a></div>
+        </article>
+        <article class="course">
+          <span class="tag navy">Navy · ISSB</span>
+          <h3>Navy officer cadet</h3>
+          <ul><li>Written exam: English, math, physics, general knowledge</li><li>Navy general knowledge and viva</li><li>Complete ISSB preparation</li></ul>
+          <a href="issb-plan.html" style="font-weight:600">See the 8-week plan (Bangla) →</a>
+          <div class="foot"><span class="price"><del>৳3,500</del> ৳2,500 <small>/ full course</small></span><a class="btn" href="#enrol" data-course="Navy officer cadet (ISSB)">Enrol</a></div>
+        </article>
+        <article class="course">
+          <span class="tag air">Air Force · ISSB</span>
+          <h3>Air Force officer cadet</h3>
+          <ul><li>Written exam: English, math, physics, general knowledge</li><li>Air Force general knowledge and viva</li><li>Complete ISSB preparation</li></ul>
+          <a href="issb-plan.html" style="font-weight:600">See the 8-week plan (Bangla) →</a>
+          <div class="foot"><span class="price"><del>৳3,500</del> ৳2,500 <small>/ full course</small></span><a class="btn" href="#enrol" data-course="Air Force officer cadet (ISSB)">Enrol</a></div>
+        </article>
+        <article class="course">
+          <span class="tag gen">Recruitment</span>
+          <h3>Soldier, sailor and airman recruitment</h3>
+          <ul><li>Written: Bangla, English, math, general knowledge</li><li>Viva: introducing yourself, general questions, conduct</li><li>Physical and medical test guidance</li></ul>
+          <a href="recruit.html" style="font-weight:600">Recruitment guide (Bangla) →</a>
+          <div class="foot"><span class="price">৳1,200 <small>/ full course</small></span><a class="btn" href="#enrol" data-course="Soldier / sailor / airman recruitment">Enrol</a></div>
+        </article>
+        <article class="course">
+          <span class="tag gen">Ansar-VDP</span>
+          <h3>Ansar-VDP recruitment</h3>
+          <ul><li>Classes following the written exam syllabus</li><li>Ansar-VDP general knowledge</li><li>Viva practice and model tests</li></ul>
+          <a href="recruit.html" style="font-weight:600">Recruitment guide (Bangla) →</a>
+          <div class="foot"><span class="price">৳800 <small>/ full course</small></span><a class="btn" href="#enrol" data-course="Ansar-VDP recruitment">Enrol</a></div>
+        </article>
+        <article class="course">
+          <span class="tag">Cadet College</span>
+          <h3>Cadet college admission (class 7)</h3>
+          <ul><li>Written: Bangla, English, math, general knowledge</li><li>Weekly model tests with result analysis</li><li>Viva preparation and guidance for parents</li></ul>
+          <a href="tests.html#cadet" style="font-weight:600">Free cadet model test →</a>
+          <div class="foot"><span class="price">৳1,500 <small>/ month</small></span><a class="btn" href="#enrol" data-course="Cadet college admission">Enrol</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="instructor">
+    <div class="wrap about">
+      <img src="assets/instructor.jpg" alt="Major (Retd) Ahnaf on a UN peacekeeping mission" width="640" height="780" loading="lazy">
+      <div style="display:grid;gap:16px;align-content:center;min-width:0">
+        <p class="eyebrow">Your instructor</p>
+        <h2 style="font-size:var(--step-3)">Who teaches you</h2>
+        <p class="name">Major (Retd) Ahnaf<small>Retired officer, Bangladesh Army</small></p>
+        <ul class="creds">
+          <li>Recommended at ISSB and commissioned into the Army</li>
+          <li>Served on a UN peacekeeping mission</li>
+          <li>Experience in field training and leading soldiers</li>
+        </ul>
+        <p class="lede">He has been through every stage of ISSB himself, so you learn from real experience where candidates usually go wrong and what the board wants to see.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band process" id="issb">
+    <div class="wrap">
+      <div style="display:grid;gap:10px">
+        <p class="eyebrow">Inter Services Selection Board</p>
+        <h2 style="font-size:var(--step-3)">The stages of ISSB</h2>
+        <p class="lede">ISSB observes you over several days. We practise each stage separately.</p>
+      </div>
+      <ol class="steps">
+        <li><b>Screening and IQ tests</b><p>Verbal and non-verbal IQ, practised against the clock.</p></li>
+        <li><b>Psychology tests</b><p>WAT, SCT, picture story writing and self description.</p></li>
+        <li><b>GTO tasks</b><p>Group discussion, PGT, HGT, command task, lecturette.</p></li>
+        <li><b>Interview</b><p>A personal interview with the board, practised in mock interviews.</p></li>
+        <li><b>Conference</b><p>The final decision, based on all the assessments.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="how">
+    <div class="wrap">
+      <div style="display:grid;gap:10px">
+        <p class="eyebrow">How classes work</p>
+        <h2 style="font-size:var(--step-3)">How classes work</h2>
+      </div>
+      <div class="feat">
+        <div><b>Live classes</b><p>Evening classes on Zoom or Google Meet, so you can attend alongside work or study.</p></div>
+        <div><b>Recorded videos</b><p>Watch any class you missed later.</p></div>
+        <div><b>Model tests</b><p>Regular timed tests with marks and explanations of mistakes.</p></div>
+        <div><b>Mock viva</b><p>One-to-one viva practice on video call, with feedback.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="routine">
+    <div class="wrap">
+      <div style="display:grid;gap:10px">
+        <p class="eyebrow">Weekly routine</p>
+        <h2 style="font-size:var(--step-3)">Weekly class routine</h2>
+        <p class="lede">All classes are in the evening (Bangladesh time). Every Friday there is a model test for all courses.</p>
+      </div>
+      <div class="table-scroll">
+        <table class="routine">
+          <thead><tr><th scope="col">Day</th><th scope="col">8:00 – 9:00 pm</th><th scope="col">9:15 – 10:15 pm</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Saturday</th><td><span class="dot army"></span>ISSB written: English</td><td><span class="dot gen"></span>Soldier &amp; Ansar: Bangla</td></tr>
+            <tr><th scope="row">Sunday</th><td><span class="dot cadet"></span>Cadet college: math</td><td><span class="dot army"></span>ISSB: IQ tests</td></tr>
+            <tr><th scope="row">Monday</th><td><span class="dot army"></span>ISSB written: general knowledge</td><td><span class="dot gen"></span>Soldier &amp; Ansar: math</td></tr>
+            <tr><th scope="row">Tuesday</th><td><span class="dot cadet"></span>Cadet college: English</td><td><span class="dot army"></span>ISSB: psychology tests (WAT, SCT, picture story)</td></tr>
+            <tr><th scope="row">Wednesday</th><td><span class="dot gen"></span>Soldier &amp; Ansar: English and GK</td><td><span class="dot army"></span>ISSB: GTO tasks and lecturette</td></tr>
+            <tr><th scope="row">Thursday</th><td><span class="dot cadet"></span>Cadet college: Bangla and GK</td><td><span class="dot viva"></span>Mock viva (all courses)</td></tr>
+            <tr class="fri"><th scope="row">Friday</th><td colspan="2"><span class="dot test"></span>Weekly model test at 10:00 am (all courses) · results and discussion in the evening</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">The new batch starts on Saturday, 31 October 2026. The routine may change if needed.</p>
+    </div>
+  </section>
+
+  <section class="band enrol-band" id="enrol">
+    <div class="wrap enrol-grid">
+      <div style="display:grid;gap:18px;align-content:start;min-width:0">
+        <p class="eyebrow">Enrolment</p>
+        <h2 style="font-size:var(--step-3)">How to enrol</h2>
+        <ol class="pay">
+          <li>Fill in your name, phone number and course in the form and send it on WhatsApp.</li>
+          <li>Pay the course fee by bKash or Nagad <b>Send Money</b>.</li>
+          <li>Send us the transaction ID on WhatsApp. We'll add you to the class group.</li>
+        </ol>
+        <div style="display:grid;gap:6px">
+          <span class="eyebrow">WhatsApp / bKash / Nagad</span>
+          <a href="https://www.facebook.com/profile.php?id=122105123493506189" target="_blank" rel="noopener" style="font-weight:600">Message us on Facebook →</a>
+          <div class="contact"><span id="phone">01846877898</span><button class="btn ghost" type="button" id="copyBtn">Copy</button></div>
+        </div>
+      </div>
+      <form id="enrolForm" novalidate>
+        <label for="fName">Your name<input id="fName" name="name" required autocomplete="name" placeholder="e.g. Rakib Hasan"></label>
+        <label for="fPhone">Mobile number<input id="fPhone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+        <label for="fCourse">Course
+          <select id="fCourse" name="course">
+            <option>Army officer cadet (ISSB)</option>
+            <option>Navy officer cadet (ISSB)</option>
+            <option>Air Force officer cadet (ISSB)</option>
+            <option>Soldier / sailor / airman recruitment</option>
+            <option>Ansar-VDP recruitment</option>
+            <option>Cadet college admission</option>
+            <option>Model test package only</option>
+          </select>
+        </label>
+        <label for="fDistrict">District<input id="fDistrict" name="district" placeholder="e.g. Cumilla"></label>
+        <button class="btn enrol" type="submit">Send on WhatsApp</button>
+        <p id="formMsg" role="status"></p>
+        <p class="note">Sending the form opens a WhatsApp message with your details. You need to press Send yourself.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="wrap" style="max-width:820px">
+      <h2 style="font-size:var(--step-3)">Frequently asked questions</h2>
+      <div>
+        <details><summary>When are classes held?</summary><p>Saturday to Thursday between 8:00 and 10:15 pm, with a model test on Friday at 10:00 am. See the routine above.</p></details>
+        <details><summary>Can I join classes on my phone?</summary><p>Yes. All you need is the Zoom or Google Meet app and an internet connection.</p></details>
+        <details><summary>What if I miss a class?</summary><p>Every class is recorded and shared in the batch group.</p></details>
+        <details><summary>Do you guarantee selection?</summary><p>No. Selection is decided only by the relevant force or organisation. We help you prepare. Anyone who promises a job in exchange for money is running a scam.</p></details>
+        <details><summary>Where can I find the circular?</summary><p>Always check the official website of the relevant force. We share new circulars in the batch group when they are published.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="band" style="padding-block:28px">
+  <div class="wrap">
+    <span><a href="https://www.facebook.com/profile.php?id=122105123493506189" target="_blank" rel="noopener">Facebook: Agrojatra Academy</a> · <a href="./" lang="bn">বাংলা সংস্করণ</a><br>© Agrojatra Academy. A private coaching institute, not affiliated with any government force.</span>
+    <a href="#">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var WHATSAPP = "8801846877898";
+  var form = document.getElementById("enrolForm");
+  var msg = document.getElementById("formMsg");
+  var select = document.getElementById("fCourse");
+
+  document.querySelectorAll("[data-course]").forEach(function (a) {
+    a.addEventListener("click", function () { select.value = a.getAttribute("data-course"); });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = form.name.value.trim(), phone = form.phone.value.trim();
+    if (!name || !/^01\d{9}$/.test(phone.replace(/[\s-]/g, ""))) {
+      msg.textContent = "Please enter your name and an 11-digit mobile number starting with 01.";
+      return;
+    }
+    var text = "Enrolment request\nName: " + name + "\nPhone: " + phone + "\nCourse: " + select.value +
+      (form.district.value.trim() ? "\nDistrict: " + form.district.value.trim() : "");
+    var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+    msg.innerHTML = "";
+    var a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Tap here to open WhatsApp";
+    msg.appendChild(a);
+    window.open(url, "_blank", "noopener");
+  });
+
+  var BATCH_START = new Date("2026-10-31T00:00:00+06:00");
+  var days = Math.ceil((BATCH_START - new Date()) / 86400000);
+  if (days < 0) document.getElementById("batch").hidden = true;
+  else document.getElementById("batchLeft").textContent = days === 0 ? "(starts today!)" : "(" + days + (days === 1 ? " day" : " days") + " left)";
+
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var el = document.getElementById("phone"), btn = this;
+    var done = function () { btn.textContent = "Copied"; };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch (err) { fallback(); }
+  });
+})();
+</script>
+<a class="wa-float" href="https://wa.me/8801846877898?text=Hello%2C%20I%27d%20like%20to%20know%20about%20Agrojatra%20Academy%27s%20courses." target="_blank" rel="noopener" aria-label="Message us on WhatsApp: 01846877898">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.1 16 26.1zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  <span>WhatsApp</span>
+</a>
+</body>
+</html>

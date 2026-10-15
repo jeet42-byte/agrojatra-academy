@@ -54,3 +54,11 @@ Week-by-week plan for the officer cadet ISSB course, linked from the three ISSB 
 ## Recruitment guide (`recruit.html`)
 
 For soldier, sailor, airman and Ansar-VDP candidates: links to the official recruitment sites, the usual selection steps, a document checklist, an 8-week fitness plan (our own training targets, not official standards) and a scam warning. Eligibility numbers change with every circular, so the page points to the official circular instead of listing exact figures.
+
+## English home page (`en.html`)
+
+English version of the home page (linked from the Bangla menu and footer). The detailed pages (tests, viva, ISSB plan, recruitment guide) are Bangla only. When you change fees, the routine or the batch date, update both `index.html` and `en.html`.
+
+## Batch start banner
+
+The red banner at the top of `index.html` and `en.html` shows the next batch date and a countdown. To change the date, edit the banner text and `BATCH_START` in the script of both pages. The banner hides itself after the start date.
