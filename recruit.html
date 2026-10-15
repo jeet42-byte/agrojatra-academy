@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agrojatra Recruit Guide</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="description" content="সৈনিক, নাবিক, বিমানসেনা ও আনসার-ভিডিপি নিয়োগের ধাপ, প্রয়োজনীয় কাগজপত্র, শারীরিক প্রস্তুতি ও প্রতারণা থেকে সাবধানতা।">
+<meta property="og:title" content="সৈনিক ও আনসার নিয়োগ গাইড · অগ্রযাত্রা একাডেমি">
+<meta property="og:description" content="আবেদন থেকে চূড়ান্ত নির্বাচন পর্যন্ত কী কী করতে হয়, এক জায়গায়।">
+<meta property="og:image" content="https://jeet42-byte.github.io/agrojatra-academy/assets/agrojatra-cover.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Hind+Siliguri:wght@400;500;600;700&family=Saira+Stencil+One&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same tokens as the main site; one 820px reading column, questions grouped by exam. */
+:root {
+  --bg: #f3f5ef; --surface: #ffffff; --ink: #17201a; --muted: #56615a; --line: #d6dccf;
+  --accent: #1f5a3a; --accent-ink: #ffffff; --signal: #c8312b; --band: #1b2a20; --band-ink: #e9efe6; --band-muted: #a8b5a9;
+  --f-display: "Tiro Bangla", "Noto Serif Bengali", Georgia, serif;
+  --f-body: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  --f-mark: "Saira Stencil One", "Arial Narrow", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55; --band: #0b100c; --band-ink: #e6ece4; --band-muted: #93a196; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55; --band: #0b100c; --band-ink: #e6ece4; --band-muted: #93a196; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.7 var(--f-body); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; line-height: 1.3; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.top { border-bottom: 1px solid var(--line); padding-block: 12px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { display: inline-grid; grid-template-columns: auto auto; column-gap: 10px; align-items: center; font: 400 1.25rem/1 var(--f-mark); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.brand img { grid-row: span 2; }
+.brand small { display: block; font: 500 0.7rem/1.4 var(--f-body); letter-spacing: 0; color: var(--muted); }
+.links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.links a { font-weight: 600; text-decoration: none; }
+
+main { max-width: 820px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 44px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+section { display: grid; gap: 16px; }
+.eyebrow { font: 500 0.78rem/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); font-size: 1.1rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer; text-decoration: none;
+  font: 600 1rem/1 var(--f-body); padding: 12px 20px; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
+.btn.enrol { background: var(--signal); color: #fff; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+
+.jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.jump a { font-weight: 600; text-decoration: none; padding: 8px 12px; border-radius: var(--radius); box-shadow: inset 0 0 0 1.5px var(--line); color: var(--ink); }
+
+details { border-top: 1px solid var(--line); padding-block: 12px; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 1.08rem; }
+details > div { padding-top: 8px; display: grid; gap: 6px; color: var(--muted); max-width: 70ch; }
+details b { color: var(--ink); }
+
+.rules { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+/* WAT trainer */
+.wat { background: var(--band); color: var(--band-ink); border-radius: var(--radius); padding: 24px; display: grid; gap: 16px; justify-items: center; text-align: center; }
+.wat .eyebrow { color: var(--band-muted); font: 600 0.9rem/1 var(--f-body); letter-spacing: 0; }
+.word { font: 400 clamp(2.4rem, 9vw, 4rem)/1.1 var(--f-display); min-height: 1.2em; }
+.clock { font: 500 1rem var(--f-mono); color: var(--band-muted); font-variant-numeric: tabular-nums; }
+.bar { width: 100%; max-width: 420px; height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--signal); }
+.wat .row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.wat .btn.ghost { color: var(--band-ink); box-shadow: inset 0 0 0 1.5px var(--band-muted); }
+.wat ol { text-align: left; margin: 0; padding-left: 1.4em; columns: 2; column-gap: 32px; color: var(--band-muted); }
+@media (max-width: 480px) { .wat ol { columns: 1; } }
+
+.cta { background: var(--surface); border: 1.5px dashed var(--signal); border-radius: var(--radius); padding: 18px; display: grid; gap: 12px; }
+.cta .row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Recruit guide */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: 0; }
+.steps > li { counter-increment: s; display: grid; grid-template-columns: 2.6rem 1fr; gap: 4px 14px; padding-block: 14px; border-top: 1px solid var(--line); }
+.steps > li:last-child { border-bottom: 1px solid var(--line); }
+.steps > li::before { content: counter(s, bengali); grid-row: span 2; width: 2.2rem; height: 2.2rem; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.steps b { font-size: 1.08rem; }
+.steps p { color: var(--muted); }
+.check { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.check li { display: grid; grid-template-columns: 1.4rem 1fr; gap: 8px; }
+.check li::before { content: "☐"; color: var(--accent); font-weight: 700; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { width: 100%; min-width: 520px;
+}
+table.fit { min-width: 0; }
+table { border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+thead th { border-top: 0; color: var(--muted); font-weight: 600; }
+.warn { border: 1.5px solid var(--signal); border-radius: var(--radius); padding: 18px; display: grid; gap: 8px; background: var(--surface); }
+.warn h2 { color: var(--signal); }
+.links-official { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.note-sm { color: var(--muted); font-size: 0.92rem; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="36" height="36">AGROJATRA<small>অগ্রযাত্রা একাডেমি</small></a>
+    <nav class="links" aria-label="মেনু"><a href="tests.html">ফ্রি টেস্ট</a><a href="viva.html">ভাইভা</a><a class="btn enrol" href="./#enrol">ভর্তি হোন</a></nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <p class="eyebrow">Recruitment guide</p>
+    <h1 style="font-size:2.3rem">সৈনিক ও আনসার নিয়োগ গাইড</h1>
+    <p class="lede">সেনাবাহিনীর সৈনিক, নৌবাহিনীর নাবিক, বিমানবাহিনীর বিমানসেনা এবং আনসার-ভিডিপি নিয়োগে আবেদন থেকে চূড়ান্ত নির্বাচন পর্যন্ত কী কী করতে হয়, এক জায়গায়।</p>
+    <nav class="jump" aria-label="অংশ"><a href="#eligibility">যোগ্যতা</a><a href="#process">নিয়োগের ধাপ</a><a href="#documents">কাগজপত্র</a><a href="#fitness">শারীরিক প্রস্তুতি</a><a href="#scam">প্রতারণা থেকে সাবধান</a></nav>
+  </section>
+
+  <section id="eligibility">
+    <h2>যোগ্যতা: সবসময় সর্বশেষ বিজ্ঞপ্তি দেখুন</h2>
+    <p>বয়স, উচ্চতা, শিক্ষাগত যোগ্যতা ও জিপিএ প্রতিটি নিয়োগ বিজ্ঞপ্তিতে এবং পদভেদে বদলায়। তাই অন্য কারও মুখে শুনে বা পুরোনো পোস্ট দেখে আবেদন করবেন না। নিচের অফিসিয়াল ওয়েবসাইটে মূল বিজ্ঞপ্তি পড়ুন:</p>
+    <ul class="links-official">
+      <li>সেনাবাহিনী: <a href="https://join.army.mil.bd" rel="noopener" target="_blank">join.army.mil.bd</a>, আবেদন: <a href="https://sainik.teletalk.com.bd" rel="noopener" target="_blank">sainik.teletalk.com.bd</a></li>
+      <li>নৌবাহিনী: <a href="https://joinnavy.navy.mil.bd" rel="noopener" target="_blank">joinnavy.navy.mil.bd</a></li>
+      <li>বিমানবাহিনী: <a href="https://joinairforce.baf.mil.bd" rel="noopener" target="_blank">joinairforce.baf.mil.bd</a></li>
+      <li>আনসার-ভিডিপি: <a href="https://www.ansarvdp.gov.bd" rel="noopener" target="_blank">ansarvdp.gov.bd</a></li>
+    </ul>
+    <p>সাম্প্রতিক সৈনিক নিয়োগ বিজ্ঞপ্তিগুলোতে সাধারণত যা চাওয়া হয়েছে, ধারণা পাওয়ার জন্য:</p>
+    <div class="table-scroll">
+      <table class="fit">
+        <thead><tr><th scope="col">বিষয়</th><th scope="col">সাধারণত</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">শিক্ষাগত যোগ্যতা</th><td>এসএসসি বা সমমান পাস, নির্দিষ্ট ন্যূনতম জিপিএসহ (বিজ্ঞপ্তি ও ট্রেডভেদে আলাদা)</td></tr>
+          <tr><th scope="row">বয়স</th><td>মোটামুটি ১৭ থেকে ২০-এর শুরুর দিক, নির্দিষ্ট তারিখ ধরে গণনা। বয়স প্রমাণে এফিডেভিট গ্রহণযোগ্য নয়।</td></tr>
+          <tr><th scope="row">উচ্চতা</th><td>পুরুষ ও নারীর জন্য আলাদা ন্যূনতম উচ্চতা, ক্ষুদ্র নৃগোষ্ঠীর জন্য কিছুটা কম</td></tr>
+          <tr><th scope="row">বৈবাহিক অবস্থা</th><td>অনেক পদে অবিবাহিত হতে হয়</td></tr>
+          <tr><th scope="row">আনসার-ভিডিপি</th><td>পদভেদে যোগ্যতা সম্পূর্ণ আলাদা, তাই নির্দিষ্ট পদের বিজ্ঞপ্তি দেখুন</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note-sm">সঠিক সংখ্যা জানতে বা নিজের যোগ্যতা মিলিয়ে দেখতে WhatsApp করুন: 01846877898। আমরা সর্বশেষ বিজ্ঞপ্তি দেখে জানিয়ে দেব।</p>
+  </section>
+
+  <section id="process">
+    <h2>নিয়োগের ধাপ (সাধারণভাবে)</h2>
+    <ol class="steps">
+      <li><b>অনলাইনে আবেদন</b><p>বিজ্ঞপ্তির সময়সীমার মধ্যে অফিসিয়াল ওয়েবসাইটে আবেদন ও ফি জমা। নিজের তথ্য সার্টিফিকেটের সাথে হুবহু মিলিয়ে দিন।</p></li>
+      <li><b>প্রবেশপত্র ডাউনলোড</b><p>পরীক্ষার তারিখ ও কেন্দ্র প্রবেশপত্রে থাকে। কয়েক কপি প্রিন্ট করে রাখুন।</p></li>
+      <li><b>প্রাথমিক বাছাই</b><p>নির্ধারিত কেন্দ্রে কাগজপত্র যাচাই, উচ্চতা-ওজন-বুকের মাপ ও শারীরিক যোগ্যতা পরীক্ষা।</p></li>
+      <li><b>লিখিত পরীক্ষা</b><p>বাংলা, ইংরেজি, গণিত ও সাধারণ জ্ঞান। <a href="tests.html">ফ্রি মডেল টেস্ট দিন</a>।</p></li>
+      <li><b>মেডিকেল পরীক্ষা</b><p>চোখ, দাঁত, কান, শরীরের দাগ বা ট্যাটু ইত্যাদি দেখা হয়। আগে থেকে নিজের চোখ ও দাঁতের সমস্যা থাকলে চিকিৎসা করিয়ে নিন।</p></li>
+      <li><b>ভাইভা ও চূড়ান্ত নির্বাচন</b><p>নিজের পরিচয়, পরিবার, এলাকা ও সাধারণ প্রশ্ন। <a href="viva.html#soldier">ভাইভার প্রশ্ন দেখুন</a>।</p></li>
+    </ol>
+    <p class="note-sm">প্রতিটি বাহিনী ও বিজ্ঞপ্তিতে ধাপের ক্রম কিছুটা আলাদা হতে পারে। প্রবেশপত্রের নির্দেশনাই চূড়ান্ত।</p>
+  </section>
+
+  <section id="documents">
+    <h2>যে কাগজপত্র আগে থেকে গুছিয়ে রাখবেন</h2>
+    <ul class="check">
+      <li>এসএসসি (ও এইচএসসি, থাকলে) সনদ ও নম্বরপত্রের মূল কপি ও ফটোকপি</li>
+      <li>জাতীয় পরিচয়পত্র বা অনলাইন জন্ম নিবন্ধন সনদ</li>
+      <li>বাবা-মায়ের জাতীয় পরিচয়পত্রের ফটোকপি</li>
+      <li>নাগরিকত্ব ও চারিত্রিক সনদ (ইউনিয়ন পরিষদ বা পৌরসভা থেকে)</li>
+      <li>সাম্প্রতিক পাসপোর্ট সাইজের রঙিন ছবি, কয়েক কপি</li>
+      <li>প্রবেশপত্রের প্রিন্ট কপি</li>
+      <li>বিজ্ঞপ্তিতে চাওয়া অন্য কোনো সনদ (যেমন কারিগরি ট্রেড কোর্স, খেলাধুলা বা বিশেষ কোটার প্রমাণ)</li>
+    </ul>
+    <p class="note-sm">সব কাগজে নাম, বাবা-মায়ের নাম ও জন্মতারিখের বানান যেন একই থাকে। অমিল থাকলে আগেই সংশোধন করুন।</p>
+  </section>
+
+  <section id="fitness">
+    <h2>৮ সপ্তাহের শারীরিক প্রস্তুতি</h2>
+    <p>এগুলো আমাদের প্রশিক্ষণের লক্ষ্যমাত্রা, অফিসিয়াল মান নয়। ধীরে শুরু করুন, প্রতি সপ্তাহে একটু করে বাড়ান।</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">সপ্তাহ</th><th scope="col">দৌড়</th><th scope="col">পুশ-আপ</th><th scope="col">সিট-আপ</th><th scope="col">অন্যান্য</th></tr></thead>
+        <tbody>
+          <tr><td>১–২</td><td>প্রতিদিন ২ কিমি, হালকা গতিতে</td><td>৩ সেট × ১০</td><td>৩ সেট × ১৫</td><td>স্ট্রেচিং, স্কিপিং ৫ মিনিট</td></tr>
+          <tr><td>৩–৪</td><td>৩ কিমি</td><td>৩ সেট × ১৫</td><td>৩ সেট × ২০</td><td>চিন-আপ চেষ্টা, স্কিপিং ১০ মিনিট</td></tr>
+          <tr><td>৫–৬</td><td>৪ কিমি, শেষ ৫০০ মিটার দ্রুত</td><td>৩ সেট × ২০</td><td>৩ সেট × ২৫</td><td>স্প্রিন্ট ১০০ মি × ৫</td></tr>
+          <tr><td>৭–৮</td><td>৫ কিমি, সময় ধরে</td><td>৩ সেট × ২৫</td><td>৩ সেট × ৩০</td><td>লং জাম্প ও হাই জাম্প অনুশীলন</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note-sm">সপ্তাহে একদিন বিশ্রাম নিন। পর্যাপ্ত পানি, ভাত-ডাল-ডিম-সবজি আর রাতে ৭–৮ ঘণ্টা ঘুম জরুরি। কোনো শারীরিক সমস্যা থাকলে ডাক্তারের পরামর্শ নিন।</p>
+  </section>
+
+  <section id="scam">
+    <div class="warn">
+      <h2>টাকা দিয়ে চাকরি? সাবধান!</h2>
+      <p>সেনাবাহিনী, নৌবাহিনী, বিমানবাহিনী বা আনসার-ভিডিপিতে নিয়োগ শুধু যোগ্যতার ভিত্তিতে হয়। আবেদন ফি ছাড়া আর কোনো টাকা লাগে না।</p>
+      <p>কেউ “লোক আছে”, “নিশ্চিত চাকরি” বা “মেডিকেলে পাস করিয়ে দেব” বলে টাকা চাইলে সেটি প্রতারণা। টাকা দেবেন না এবং নিকটস্থ সেনানিবাস বা থানায় জানান।</p>
+      <p><b>অগ্রযাত্রা একাডেমি শুধু প্রস্তুতিতে সাহায্য করে। আমরা কোনো নিয়োগের নিশ্চয়তা দিই না।</b></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <p>সৈনিক, নাবিক ও বিমানসেনা কোর্স ৳ ১,২০০, আনসার-ভিডিপি কোর্স ৳ ৮০০। লিখিত, ভাইভা ও শারীরিক প্রস্তুতির গাইডলাইন একসাথে।</p>
+      <div class="row"><a class="btn enrol" href="./#enrol">ভর্তি হোন</a><a class="btn ghost" href="tests.html">ফ্রি মডেল টেস্ট দিন</a></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

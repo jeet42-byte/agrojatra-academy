@@ -50,3 +50,7 @@ Common viva questions for ISSB, soldier/Ansar and cadet college, each with a tip
 ## 8-week ISSB plan (`issb-plan.html`)
 
 Week-by-week plan for the officer cadet ISSB course, linked from the three ISSB course cards. Edit the weeks directly in the page.
+
+## Recruitment guide (`recruit.html`)
+
+For soldier, sailor, airman and Ansar-VDP candidates: links to the official recruitment sites, the usual selection steps, a document checklist, an 8-week fitness plan (our own training targets, not official standards) and a scam warning. Eligibility numbers change with every circular, so the page points to the official circular instead of listing exact figures.
