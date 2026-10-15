@@ -16,7 +16,7 @@ It's one static file (`index.html`) with no build step.
 | Academy name (set: Agrojatra Academy) | `<title>`, `.brand`, footer |
 | WhatsApp number for the enrol form (set) | `var WHATSAPP = "8801846877898"` in the script at the bottom |
 | Number shown for WhatsApp / bKash / Nagad (set) | `<span id="phone">` |
-| Course fees | each `.price` in the Courses section (current values are placeholders) |
+| Course fees (set: ISSB ৳2,500 launch offer, regular ৳3,500; soldier ৳1,200; Ansar ৳800; cadet college ৳1,500/month; model tests ৳300) | each `.price` in the Courses section, and the `.offer` line above the cards |
 | Subjects per course | the `<ul>` in each course card, check against the latest official circular |
 | Class times | FAQ "ক্লাস কখন হয়?" |
 

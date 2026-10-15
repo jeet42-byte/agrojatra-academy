@@ -97,6 +97,9 @@ a { color: var(--accent); }
 .course ul { margin: 0; padding-left: 1.1em; color: var(--muted); }
 .course .foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); flex-wrap: wrap; }
 .price { font: 700 var(--step-1) var(--f-body); font-variant-numeric: tabular-nums; }
+.price del { font-weight: 400; color: var(--muted); font-size: 0.85em; margin-right: 4px; }
+.offer { border: 1.5px dashed var(--signal); border-radius: var(--radius); padding: 12px 16px; max-width: 75ch; }
+.offer b { color: var(--signal); }
 .price small { font-weight: 400; color: var(--muted); font-size: 0.8rem; }
 .course .btn { padding: 10px 14px; font-size: 0.95rem; }
 
@@ -188,6 +191,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
         <h2 style="font-size:var(--step-3)">আমাদের কোর্সসমূহ</h2>
         <p class="lede">প্রতিটি কোর্সে লিখিত, ভাইভা এবং মডেল টেস্ট একসাথে। নিজের লক্ষ্য অনুযায়ী কোর্স বেছে নিন।</p>
       </div>
+      <p class="offer"><b>উদ্বোধনী অফার:</b> প্রথম ব্যাচের ৩০ জন শিক্ষার্থীর জন্য ISSB অফিসার ক্যাডেট কোর্স ৳ ২,৫০০ (নিয়মিত ৳ ৩,৫০০)। শুধু মডেল টেস্ট প্যাকেজ চাইলে ৳ ৩০০।</p>
       <div class="grid">
         <article class="course">
           <span class="tag army">Army · ISSB</span>
@@ -197,7 +201,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <li>প্রাথমিক ভাইভা প্রস্তুতি</li>
             <li>ISSB: IQ, সাইকোলজি টেস্ট, GTO টাস্ক, ইন্টারভিউ</li>
           </ul>
-          <div class="foot"><span class="price">৳ ৩,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="সেনাবাহিনী অফিসার ক্যাডেট (ISSB)">ভর্তি</a></div>
+          <div class="foot"><span class="price"><del>৳ ৩,৫০০</del> ৳ ২,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="সেনাবাহিনী অফিসার ক্যাডেট (ISSB)">ভর্তি</a></div>
         </article>
         <article class="course">
           <span class="tag navy">Navy · ISSB</span>
@@ -207,7 +211,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <li>নৌবাহিনী-সংক্রান্ত সাধারণ জ্ঞান ও ভাইভা</li>
             <li>ISSB-এর সম্পূর্ণ প্রস্তুতি</li>
           </ul>
-          <div class="foot"><span class="price">৳ ৩,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="নৌবাহিনী অফিসার ক্যাডেট (ISSB)">ভর্তি</a></div>
+          <div class="foot"><span class="price"><del>৳ ৩,৫০০</del> ৳ ২,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="নৌবাহিনী অফিসার ক্যাডেট (ISSB)">ভর্তি</a></div>
         </article>
         <article class="course">
           <span class="tag air">Air Force · ISSB</span>
@@ -217,7 +221,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <li>বিমানবাহিনী-সংক্রান্ত সাধারণ জ্ঞান ও ভাইভা</li>
             <li>ISSB-এর সম্পূর্ণ প্রস্তুতি</li>
           </ul>
-          <div class="foot"><span class="price">৳ ৩,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="বিমানবাহিনী অফিসার ক্যাডেট (ISSB)">ভর্তি</a></div>
+          <div class="foot"><span class="price"><del>৳ ৩,৫০০</del> ৳ ২,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="বিমানবাহিনী অফিসার ক্যাডেট (ISSB)">ভর্তি</a></div>
         </article>
         <article class="course">
           <span class="tag gen">Recruitment</span>
@@ -227,7 +231,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <li>ভাইভা: নিজের পরিচয়, সাধারণ প্রশ্ন, আচরণ</li>
             <li>শারীরিক ও মেডিকেল পরীক্ষার গাইডলাইন</li>
           </ul>
-          <div class="foot"><span class="price">৳ ১,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="সৈনিক / নাবিক / বিমানসেনা নিয়োগ">ভর্তি</a></div>
+          <div class="foot"><span class="price">৳ ১,২০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="সৈনিক / নাবিক / বিমানসেনা নিয়োগ">ভর্তি</a></div>
         </article>
         <article class="course">
           <span class="tag gen">Ansar-VDP</span>
@@ -237,7 +241,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <li>আনসার-ভিডিপি সম্পর্কিত সাধারণ জ্ঞান</li>
             <li>ভাইভা অনুশীলন ও মডেল টেস্ট</li>
           </ul>
-          <div class="foot"><span class="price">৳ ১,৫০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="আনসার-ভিডিপি নিয়োগ">ভর্তি</a></div>
+          <div class="foot"><span class="price">৳ ৮০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="আনসার-ভিডিপি নিয়োগ">ভর্তি</a></div>
         </article>
         <article class="course">
           <span class="tag">Cadet College</span>
@@ -247,7 +251,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <li>সাপ্তাহিক মডেল টেস্ট ও ফলাফল বিশ্লেষণ</li>
             <li>মৌখিক পরীক্ষা ও অভিভাবকের জন্য গাইডলাইন</li>
           </ul>
-          <div class="foot"><span class="price">৳ ৩,০০০ <small>/ পূর্ণ কোর্স</small></span><a class="btn" href="#enrol" data-course="ক্যাডেট কলেজ ভর্তি">ভর্তি</a></div>
+          <div class="foot"><span class="price">৳ ১,৫০০ <small>/ মাস</small></span><a class="btn" href="#enrol" data-course="ক্যাডেট কলেজ ভর্তি">ভর্তি</a></div>
         </article>
       </div>
     </div>
@@ -311,6 +315,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
             <option>সৈনিক / নাবিক / বিমানসেনা নিয়োগ</option>
             <option>আনসার-ভিডিপি নিয়োগ</option>
             <option>ক্যাডেট কলেজ ভর্তি</option>
+            <option>শুধু মডেল টেস্ট প্যাকেজ</option>
           </select>
         </label>
         <label for="fDistrict">জেলা<input id="fDistrict" name="district" placeholder="যেমন: কুমিল্লা"></label>
