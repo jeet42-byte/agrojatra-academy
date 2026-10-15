@@ -102,6 +102,10 @@ a { color: var(--accent); }
 .rank span:last-child { font: 500 0.8rem var(--f-mono); color: var(--muted); }
 @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } }
 
+.promo { margin: 0; display: grid; gap: 6px; justify-items: center; }
+.promo video { width: 100%; max-width: 300px; aspect-ratio: 9 / 16; border-radius: var(--radius); background: var(--band); display: block; }
+.promo figcaption { font-size: 0.9rem; color: var(--muted); }
+
 /* Courses */
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 @media (max-width: 960px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -228,6 +232,11 @@ body::after { content: ""; display: block; height: 76px; }
           <a class="btn ghost" href="tests.html">ফ্রি মডেল টেস্ট দিন</a>
         </div>
       </div>
+      <div class="side" style="display:grid;gap:16px;min-width:0">
+        <figure class="promo">
+          <video src="assets/promo-1.mp4" poster="assets/promo-1-poster.jpg" controls muted playsinline preload="none" aria-label="অগ্রযাত্রা একাডেমির পরিচিতি ভিডিও"></video>
+          <figcaption>১৫ সেকেন্ডে অগ্রযাত্রা একাডেমি</figcaption>
+        </figure>
       <aside class="ladder" aria-label="কোর্স তালিকা সংক্ষেপে">
         <h2>কাদের জন্য এই কোচিং</h2>
         <div class="rank"><i style="background:var(--army)"></i><span>সেনাবাহিনী অফিসার ক্যাডেট (BMA)</span><span>ISSB</span></div>
@@ -237,6 +246,7 @@ body::after { content: ""; display: block; height: 76px; }
         <div class="rank"><i style="background:var(--accent)"></i><span>আনসার-ভিডিপি নিয়োগ</span><span>লিখিত + ভাইভা</span></div>
         <div class="rank"><i style="background:var(--muted)"></i><span>ক্যাডেট কলেজ ভর্তি (৭ম শ্রেণি)</span><span>লিখিত + ভাইভা</span></div>
       </aside>
+      </div>
     </div>
   </section>
 
