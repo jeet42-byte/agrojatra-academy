@@ -31,7 +31,7 @@ The form doesn't need a server. When a student submits it, the page opens WhatsA
 
 ## Free model tests (`tests.html`)
 
-Five timed MCQ tests (ISSB IQ, GK, Math, English, Bangla), one minute per question, with a score and an explanation for every answer at the end. Each visitor's best score is kept in their own browser.
+Five timed MCQ tests (ISSB IQ 27, GK 28, Math 24, English 24, Bangla 24 questions), one minute per question, questions in a new random order on every attempt, with a score and an explanation for every answer at the end. Each visitor's best score is kept in their own browser.
 
 To add or edit questions, change the `TESTS` list at the top of the script in `tests.html`. Each question is `["question", ["option 1", "option 2", "option 3", "option 4"], index of the correct option starting at 0, "explanation"]`.
 
