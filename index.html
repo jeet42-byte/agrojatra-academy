@@ -110,6 +110,15 @@ a { color: var(--accent); }
 .price small { font-weight: 400; color: var(--muted); font-size: 0.8rem; }
 .course .btn { padding: 10px 14px; font-size: 0.95rem; }
 
+/* Instructor */
+.about { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: center; }
+.about img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.name { font: 700 var(--step-2)/1.3 var(--f-body); }
+.name small { display: block; font-weight: 500; font-size: 1rem; color: var(--muted); }
+.creds { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.creds li::marker { color: var(--signal); }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; gap: 24px; } .about img { max-width: 360px; } }
+
 /* ISSB process */
 .process { background: var(--band); color: var(--band-ink); }
 .process .eyebrow, .process .lede { color: var(--band-muted); }
@@ -172,6 +181,7 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
       <a href="#courses">কোর্স</a>
       <a href="tests.html">ফ্রি মডেল টেস্ট</a>
       <a href="viva.html">ভাইভা প্রস্তুতি</a>
+      <a href="#instructor">শিক্ষক</a>
       <a href="#issb">ISSB ধাপ</a>
       <a href="#routine">রুটিন</a>
       <a href="#faq">প্রশ্নোত্তর</a>
@@ -276,6 +286,23 @@ footer .wrap { grid-template-columns: 1fr auto; gap: 12px; }
           </ul>
           <div class="foot"><span class="price">৳ ১,৫০০ <small>/ মাস</small></span><a class="btn" href="#enrol" data-course="ক্যাডেট কলেজ ভর্তি">ভর্তি</a></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="instructor">
+    <div class="wrap about">
+      <img src="assets/instructor.jpg" alt="জাতিসংঘ শান্তিরক্ষা মিশনে দায়িত্ব পালনের সময় আহনাফ" width="640" height="780" loading="lazy">
+      <div style="display:grid;gap:16px;align-content:center;min-width:0">
+        <p class="eyebrow">Your instructor</p>
+        <h2 style="font-size:var(--step-3)">কে পড়াবেন</h2>
+        <p class="name">আহনাফ<small>অবসরপ্রাপ্ত সেনা কর্মকর্তা, বাংলাদেশ সেনাবাহিনী</small></p>
+        <ul class="creds">
+          <li>নিজে ISSB-তে সুপারিশপ্রাপ্ত হয়ে সেনাবাহিনীতে কমিশন পেয়েছেন</li>
+          <li>জাতিসংঘ শান্তিরক্ষা মিশনে দায়িত্ব পালন করেছেন</li>
+          <li>মাঠপর্যায়ের প্রশিক্ষণ ও সৈনিকদের নেতৃত্ব দেওয়ার অভিজ্ঞতা</li>
+        </ul>
+        <p class="lede">ISSB-র প্রতিটি ধাপ নিজে পার হয়ে এসেছেন। তাই কোথায় প্রার্থীরা সাধারণত ভুল করে, আর বোর্ড কী দেখতে চায়, তা বাস্তব অভিজ্ঞতা থেকে শেখানো হয়।</p>
       </div>
     </div>
   </section>
