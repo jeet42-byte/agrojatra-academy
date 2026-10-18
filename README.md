@@ -66,3 +66,8 @@ The red banner at the top of `index.html` and `en.html` shows the next batch dat
 ## Free downloads (`downloads.html`, `assets/pdf/`)
 
 Three free study PDFs: ISSB complete guide, Bangladesh & defence GK sheet, and a 151-question bank with answers and explanations (built from the questions in `tests.html`). To add a new PDF, put it in `assets/pdf/` and copy one of the `<article class="file">` cards in `downloads.html`.
+
+## Picture IQ (`nonverbal.html`) and picture story (`ppdt.html`)
+
+- `nonverbal.html`: 20 non-verbal IQ questions (rotation, series, odd one out, 3×3 matrix, mirror and water images, analogy). The figures are drawn as SVG in the `NONVERBAL` list in the page script; the first option of each question is the correct one and options are shuffled on screen.
+- `ppdt.html`: 6 hazy practice scenes (SVG in the `PPDT` list) with a 30-second view / 4-minute write timer, points to notice and a sample story for each.

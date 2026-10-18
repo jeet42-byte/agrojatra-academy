@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agrojatra Picture IQ</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="description" content="ISSB নন-ভার্বাল (ছবিভিত্তিক) IQ অনুশীলন: ঘূর্ণন, ধারা, কোনটি আলাদা, ম্যাট্রিক্স, আয়না ও জলের প্রতিবিম্ব — উত্তর ও ব্যাখ্যাসহ।">
+<meta property="og:title" content="ছবিভিত্তিক IQ অনুশীলন · অগ্রযাত্রা একাডেমি">
+<meta property="og:description" content="ISSB নন-ভার্বাল IQ-এর ২০টি প্রশ্ন, উত্তর ও ব্যাখ্যাসহ।">
+<meta property="og:image" content="https://jeet42-byte.github.io/agrojatra-academy/assets/agrojatra-cover.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Hind+Siliguri:wght@400;500;600;700&family=Saira+Stencil+One&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same tokens as the main site; one 820px reading column, questions grouped by exam. */
+:root {
+  --bg: #f3f5ef; --surface: #ffffff; --ink: #17201a; --muted: #56615a; --line: #d6dccf;
+  --accent: #1f5a3a; --accent-ink: #ffffff; --signal: #c8312b; --band: #1b2a20; --band-ink: #e9efe6; --band-muted: #a8b5a9;
+  --f-display: "Tiro Bangla", "Noto Serif Bengali", Georgia, serif;
+  --f-body: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  --f-mark: "Saira Stencil One", "Arial Narrow", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55; --band: #0b100c; --band-ink: #e6ece4; --band-muted: #93a196; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111712; --surface: #18201a; --ink: #e6ece4; --muted: #a2ada4; --line: #2c372f;
+  --accent: #5fb383; --accent-ink: #0d1510; --signal: #ef5d55; --band: #0b100c; --band-ink: #e6ece4; --band-muted: #93a196; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.7 var(--f-body); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; line-height: 1.3; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.top { border-bottom: 1px solid var(--line); padding-block: 12px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { display: inline-grid; grid-template-columns: auto auto; column-gap: 10px; align-items: center; font: 400 1.25rem/1 var(--f-mark); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+.brand img { grid-row: span 2; }
+.brand small { display: block; font: 500 0.7rem/1.4 var(--f-body); letter-spacing: 0; color: var(--muted); }
+.links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.links a { font-weight: 600; text-decoration: none; }
+
+main { max-width: 820px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 44px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+section { display: grid; gap: 16px; }
+.eyebrow { font: 500 0.78rem/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); font-size: 1.1rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer; text-decoration: none;
+  font: 600 1rem/1 var(--f-body); padding: 12px 20px; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
+.btn.enrol { background: var(--signal); color: #fff; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+
+.jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.jump a { font-weight: 600; text-decoration: none; padding: 8px 12px; border-radius: var(--radius); box-shadow: inset 0 0 0 1.5px var(--line); color: var(--ink); }
+
+details { border-top: 1px solid var(--line); padding-block: 12px; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 1.08rem; }
+details > div { padding-top: 8px; display: grid; gap: 6px; color: var(--muted); max-width: 70ch; }
+details b { color: var(--ink); }
+
+.rules { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+/* WAT trainer */
+.wat { background: var(--band); color: var(--band-ink); border-radius: var(--radius); padding: 24px; display: grid; gap: 16px; justify-items: center; text-align: center; }
+.wat .eyebrow { color: var(--band-muted); font: 600 0.9rem/1 var(--f-body); letter-spacing: 0; }
+.word { font: 400 clamp(2.4rem, 9vw, 4rem)/1.1 var(--f-display); min-height: 1.2em; }
+.clock { font: 500 1rem var(--f-mono); color: var(--band-muted); font-variant-numeric: tabular-nums; }
+.bar { width: 100%; max-width: 420px; height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--signal); }
+.wat .row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.wat .btn.ghost { color: var(--band-ink); box-shadow: inset 0 0 0 1.5px var(--band-muted); }
+.wat ol { text-align: left; margin: 0; padding-left: 1.4em; columns: 2; column-gap: 32px; color: var(--band-muted); }
+@media (max-width: 480px) { .wat ol { columns: 1; } }
+
+.cta { background: var(--surface); border: 1.5px dashed var(--signal); border-radius: var(--radius); padding: 18px; display: grid; gap: 12px; }
+.cta .row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.site-foot { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: 0.92rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.site-foot .in { max-width: 820px; margin: 0 auto; display: grid; gap: 8px; }
+.site-foot nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.site-foot a { font-weight: 600; }
+.site-foot .small { font-size: 0.85rem; }
+
+.wa-float { position: fixed; z-index: 20; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 999px; background: #1f8f4e; color: #fff;
+  font: 700 1rem/1 var(--f-body); text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+.wa-float:hover { background: #18773f; }
+@media (max-width: 480px) { .wa-float span { display: none; } .wa-float { padding: 14px; } }
+@media print { .wa-float { display: none; } }
+body::after { content: ""; display: block; height: 76px; }
+
+/* Picture IQ */
+.fig { width: 100%; height: auto; color: var(--ink); display: block; }
+.fig.q { color: var(--signal); }
+.nq { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 14px; }
+.nq .head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.nq .cat { font: 600 0.85rem/1 var(--f-body); color: var(--accent); }
+.nq .num { font: 600 0.85rem/1 var(--f-body); color: var(--muted); }
+.nq h2 { font: 600 1.1rem/1.5 var(--f-body); }
+.frames { display: grid; grid-template-columns: repeat(auto-fit, minmax(56px, 82px)); gap: 8px; }
+.frames > div, .grid3 > div, .ana > div { border: 1.5px solid var(--line); border-radius: 6px; padding: 6px; background: var(--bg); }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 82px)); gap: 6px; }
+.ana { display: grid; grid-template-columns: repeat(2, minmax(0, 82px)) auto repeat(2, minmax(0, 82px)); gap: 8px; align-items: center; }
+.ana span { font: 700 1.4rem/1 var(--f-body); color: var(--muted); text-align: center; }
+.opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 460px; }
+.opt { display: grid; gap: 4px; padding: 8px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; font: 600 0.95rem var(--f-body); }
+.opt:hover { border-color: var(--accent); }
+.opt.ok { border-color: #1f7a45; box-shadow: inset 0 0 0 2px #1f7a45; }
+.opt.no { border-color: var(--signal); box-shadow: inset 0 0 0 2px var(--signal); opacity: 0.85; }
+.why { border-left: 4px solid var(--accent); padding: 6px 12px; color: var(--muted); }
+.why b { color: var(--ink); }
+.score { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4; background: var(--bg); padding-block: 10px; font-weight: 700; border-bottom: 1px solid var(--line); }
+@media (max-width: 420px) { .ana { grid-template-columns: repeat(2, minmax(0, 64px)) auto repeat(2, minmax(0, 64px)); } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="36" height="36">AGROJATRA<small>অগ্রযাত্রা একাডেমি</small></a>
+    <nav class="links" aria-label="মেনু"><a href="tests.html">ফ্রি টেস্ট</a><a class="btn enrol" href="./#enrol">ভর্তি হোন</a></nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <p class="eyebrow">Non-verbal IQ</p>
+    <h1 style="font-size:2.3rem">ছবিভিত্তিক IQ অনুশীলন</h1>
+    <p class="lede">ISSB-র নন-ভার্বাল IQ টেস্টের ধাঁচে ২০টি প্রশ্ন: ঘূর্ণন, ধারা, কোনটি আলাদা, ম্যাট্রিক্স, আয়না ও জলের প্রতিবিম্ব এবং সম্পর্ক। উত্তরে চাপ দিলেই সঠিক উত্তর ও ব্যাখ্যা দেখতে পাবেন।</p>
+    <div class="tip" style="border-left:4px solid var(--accent);padding:8px 14px;background:var(--surface)"><b>কৌশল:</b> প্রথমে দেখুন কী বদলাচ্ছে: দিক (ঘূর্ণন), সংখ্যা, রং, নাকি আকৃতি। তারপর একই নিয়ম পরের ঘরে বসান। আসল পরীক্ষায় সময় কম, তাই প্রতি প্রশ্নে ৩০–৪০ সেকেন্ডের বেশি দেবেন না।</div>
+  </section>
+  <p class="score" id="score">সঠিক: ০ / উত্তর দিয়েছেন: ০ · মোট ২০</p>
+  <section id="list" style="gap:16px"></section>
+  <section>
+    <div class="cta">
+      <p>আরও প্রশ্ন ও সময় ধরে অনুশীলন চাইলে ফ্রি মডেল টেস্ট দিন। পূর্ণ ISSB প্রস্তুতির জন্য নতুন ব্যাচ শুরু ৩১ অক্টোবর।</p>
+      <div class="row"><a class="btn enrol" href="./#enrol">ভর্তি হোন</a><a class="btn ghost" href="tests.html#iq">ভার্বাল IQ টেস্ট দিন</a><a class="btn ghost" href="ppdt.html">ছবি দেখে গল্প লেখা</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="in">
+    <nav aria-label="সব পেজ"><a href="./">হোম</a><a href="tests.html">ফ্রি মডেল টেস্ট</a><a href="downloads.html">ফ্রি PDF</a><a href="viva.html">ভাইভা প্রস্তুতি</a><a href="nonverbal.html">ছবিভিত্তিক IQ</a><a href="ppdt.html">ছবি দেখে গল্প</a><a href="issb-plan.html">ISSB পরিকল্পনা</a><a href="recruit.html">নিয়োগ গাইড</a></nav>
+    <p><a href="https://www.facebook.com/profile.php?id=122105123493506189" target="_blank" rel="noopener">Facebook: Agrojatra Academy</a> · WhatsApp: 01846877898</p>
+    <p class="small">© অগ্রযাত্রা একাডেমি। একটি বেসরকারি কোচিং প্রতিষ্ঠান; কোনো সরকারি বাহিনীর সাথে সম্পৃক্ত নয়।</p>
+  </div>
+</footer>
+
+<script>
+// Non-verbal IQ questions, drawn as SVG so every answer is correct by construction.
+// Each question: { cat, q, frames: [svg], options: [svg] (first is correct before shuffling), why }
+(function (root) {
+  var INK = "currentColor";
+  function svg(inner, cls) { return '<svg viewBox="0 0 100 100" class="' + (cls || "fig") + '" aria-hidden="true">' + inner + '</svg>'; }
+  function rot(a) { return a ? ' transform="rotate(' + a + ' 50 50)"' : ""; }
+  function polyPts(n, r, start) {
+    var p = [];
+    for (var i = 0; i < n; i++) { var t = (start + i * 360 / n) * Math.PI / 180; p.push((50 + r * Math.sin(t)).toFixed(1) + "," + (50 - r * Math.cos(t)).toFixed(1)); }
+    return p.join(" ");
+  }
+  function poly(n, fill, a, r) { return '<polygon points="' + polyPts(n, r || 34, n === 4 ? 45 : 0) + '" fill="' + (fill ? INK : "none") + '" stroke="' + INK + '" stroke-width="4"' + rot(a) + '/>'; }
+  function circle(fill, r) { return '<circle cx="50" cy="50" r="' + (r || 32) + '" fill="' + (fill ? INK : "none") + '" stroke="' + INK + '" stroke-width="4"/>'; }
+  function arrow(a) { return '<path d="M50 12 L68 36 L57 36 L57 88 L43 88 L43 36 L32 36 Z" fill="' + INK + '"' + rot(a) + '/>'; }
+  function letterF(a, mirror, water) {
+    var t = "";
+    if (mirror) t += "translate(100 0) scale(-1 1) ";
+    if (water) t += "translate(0 100) scale(1 -1) ";
+    if (a) t = "rotate(" + a + " 50 50) " + t;
+    return '<path d="M33 16 H70 V29 H47 V43 H64 V56 H47 V84 H33 Z" fill="' + INK + '"' + (t ? ' transform="' + t.trim() + '"' : "") + '/>';
+  }
+  function dots(n) {
+    var pos = [[50, 50], [30, 30, 70, 70], [25, 25, 50, 50, 75, 75], [30, 30, 70, 30, 30, 70, 70, 70], [30, 30, 70, 30, 50, 50, 30, 70, 70, 70],
+      [30, 25, 70, 25, 30, 50, 70, 50, 30, 75, 70, 75], [30, 25, 70, 25, 30, 50, 50, 50, 70, 50, 30, 75, 70, 75],
+      [25, 25, 50, 25, 75, 25, 25, 50, 75, 50, 25, 75, 50, 75, 75, 75], [25, 25, 50, 25, 75, 25, 25, 50, 50, 50, 75, 50, 25, 75, 50, 75, 75, 75]][n - 1];
+    var s = "";
+    for (var i = 0; i < pos.length; i += 2) s += '<circle cx="' + pos[i] + '" cy="' + pos[i + 1] + '" r="7" fill="' + INK + '"/>';
+    return s;
+  }
+  function lines(n) {
+    var s = "", gap = 70 / (n + 1);
+    for (var i = 1; i <= n; i++) s += '<line x1="' + (15 + gap * i).toFixed(1) + '" y1="20" x2="' + (15 + gap * i).toFixed(1) + '" y2="80" stroke="' + INK + '" stroke-width="4"/>';
+    return s;
+  }
+  function half(a) { // circle with one half filled; a = rotation of the filled half (0 = left half)
+    return '<circle cx="50" cy="50" r="32" fill="none" stroke="' + INK + '" stroke-width="4"/><path d="M50 18 A32 32 0 0 0 50 82 Z" fill="' + INK + '"' + rot(a) + '/>';
+  }
+  function dotIn(n, k, a) { // polygon with a small dot near vertex k
+    var t = (k * 360 / n) * Math.PI / 180, x = 50 + 20 * Math.sin(t), y = 50 - 20 * Math.cos(t);
+    return '<g' + rot(a) + '>' + poly(n, false) + '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="6" fill="' + INK + '"/></g>';
+  }
+  function shapeN(n, fill) { return n === 0 ? circle(fill) : poly(n, fill); }
+  function mini(n, count, fill) { // count small shapes of type n in a cell
+    var s = "", pos = { 1: [[50, 50]], 2: [[30, 50], [70, 50]], 3: [[25, 50], [50, 50], [75, 50]] }[count];
+    pos.forEach(function (p) {
+      var g = n === 0 ? '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="11" fill="' + (fill ? INK : "none") + '" stroke="' + INK + '" stroke-width="3"/>'
+        : '<polygon points="' + polyPts(n, 13, n === 4 ? 45 : 0).split(" ").map(function (xy) { var c = xy.split(","); return (+c[0] - 50 + p[0]).toFixed(1) + "," + (+c[1] - 50 + p[1]).toFixed(1); }).join(" ") + '" fill="' + (fill ? INK : "none") + '" stroke="' + INK + '" stroke-width="3"/>';
+      s += g;
+    });
+    return s;
+  }
+  var Q = "?";
+  function qmark() { return svg('<text x="50" y="66" text-anchor="middle" font-size="48" font-weight="700" fill="' + INK + '">?</text>', "fig q"); }
+
+  var QS = [];
+  function add(cat, q, frames, options, why) { QS.push({ cat: cat, q: q, frames: frames.map(function (f) { return f === Q ? qmark() : svg(f); }), options: options.map(function (o) { return svg(o); }), why: why }); }
+
+  // A. Rotation series
+  add("ধারা (ঘূর্ণন)", "তীরটি কোন নিয়মে ঘুরছে? পরের চিত্রটি কোনটি?", [arrow(0), arrow(45), arrow(90), arrow(135), Q],
+    [arrow(180), arrow(225), arrow(135), arrow(90)], "প্রতিবার তীরটি ঘড়ির কাঁটার দিকে ৪৫° ঘুরছে। ১৩৫° এর পর ১৮০°, অর্থাৎ তীর নিচের দিকে।");
+  add("ধারা (ঘূর্ণন)", "পরের চিত্রটি কোনটি?", [arrow(0), arrow(90), arrow(180), Q],
+    [arrow(270), arrow(0), arrow(90), arrow(225)], "প্রতিবার ৯০° ঘড়ির কাঁটার দিকে: উপর → ডান → নিচ → বাম।");
+  add("ধারা (ঘূর্ণন)", "ত্রিভুজের ভেতরের বিন্দুটি কোন নিয়মে সরছে? পরের চিত্রটি কোনটি?", [dotIn(3, 0, 0), dotIn(3, 1, 0), dotIn(3, 2, 0), Q],
+    [dotIn(3, 0, 0), dotIn(3, 1, 0), dotIn(3, 2, 0), dotIn(4, 0, 0)], "বিন্দুটি প্রতিবার পরের কোণে যাচ্ছে (ঘড়ির কাঁটার দিকে)। তৃতীয় কোণের পর আবার প্রথম কোণে।");
+  add("ধারা (ঘূর্ণন)", "অর্ধেক রং করা বৃত্তটি ঘুরছে। পরের চিত্রটি কোনটি?", [half(0), half(90), half(180), Q],
+    [half(270), half(0), half(90), half(45)], "রং করা অংশ প্রতিবার ৯০° ঘড়ির কাঁটার দিকে ঘুরছে: বাম → উপর → ডান → নিচ।");
+
+  // B. Count series
+  add("ধারা (সংখ্যা)", "বিন্দুর সংখ্যা কোন নিয়মে বাড়ছে? পরের চিত্রটি কোনটি?", [dots(1), dots(3), dots(5), dots(7), Q],
+    [dots(9), dots(8), dots(6), dots(7)], "বিন্দু প্রতিবার ২টি করে বাড়ছে: ১, ৩, ৫, ৭, ৯।");
+  add("ধারা (সংখ্যা)", "পরের আকৃতি কোনটি?", [poly(3, false), poly(4, false), poly(5, false), Q],
+    [poly(6, false), poly(7, false), poly(5, false), circle(false)], "বাহুর সংখ্যা প্রতিবার ১টি করে বাড়ছে: ৩, ৪, ৫, তাই পরেরটি ৬ বাহুর ষড়ভুজ।");
+  add("ধারা (সংখ্যা)", "রেখার সংখ্যা দেখে পরের চিত্রটি বের করুন।", [lines(1), lines(2), lines(4), Q],
+    [lines(8), lines(6), lines(5), lines(7)], "রেখার সংখ্যা প্রতিবার দ্বিগুণ হচ্ছে: ১, ২, ৪, ৮।");
+  add("ধারা (সংখ্যা)", "পরের চিত্রটি কোনটি?", [dots(9), dots(7), dots(5), Q],
+    [dots(3), dots(4), dots(2), dots(1)], "প্রতিবার ২টি করে বিন্দু কমছে: ৯, ৭, ৫, ৩।");
+
+  // C. Odd one out
+  add("কোনটি আলাদা", "নিচের কোন চিত্রটি অন্যগুলোর সাথে মেলে না?", [],
+    [letterF(90, true), letterF(0), letterF(90), letterF(180)], "তিনটি চিত্র একই ‘F’ ঘোরানো। একটি চিত্র আয়নায় উল্টানো, যা শুধু ঘুরিয়ে মেলানো যায় না।");
+  add("কোনটি আলাদা", "কোন চিত্রটি দলের সাথে মেলে না?", [],
+    [poly(4, true), poly(3, false), poly(5, false), poly(6, false)], "অন্যগুলো ফাঁকা (রং ছাড়া), শুধু এটি পুরো রং করা।");
+  add("কোনটি আলাদা", "কোন তীরটি আলাদা?", [],
+    [arrow(135), arrow(0), arrow(90), arrow(270)], "অন্য তিনটি তীর সোজা উপর, ডান বা বাম দিকে (৯০° এর গুণিতক)। এটি কোনাকুনি (১৩৫°)।");
+  add("কোনটি আলাদা", "কোন চিত্রটি আলাদা?", [],
+    [dots(4), dots(3), dots(5), dots(7)], "অন্যগুলোতে বিন্দুর সংখ্যা বিজোড় (৩, ৫, ৭)। এটিতে জোড় (৪)।");
+
+  // D. Matrix (3x3), frames carry a flag
+  function matrix(cells) { return { matrix: cells }; }
+  QS.push({ cat: "ম্যাট্রিক্স", q: "প্রতিটি সারি ও কলামের নিয়ম দেখে ? এর জায়গায় কোনটি বসবে?", matrix: [
+      svg(mini(3, 1)), svg(mini(3, 2)), svg(mini(3, 3)),
+      svg(mini(4, 1)), svg(mini(4, 2)), svg(mini(4, 3)),
+      svg(mini(0, 1)), svg(mini(0, 2)), qmark()],
+    options: [svg(mini(0, 3)), svg(mini(4, 3)), svg(mini(0, 2)), svg(mini(3, 3))],
+    why: "প্রতিটি সারিতে একই আকৃতি (ত্রিভুজ, বর্গ, বৃত্ত), আর প্রতি কলামে সংখ্যা ১, ২, ৩। তাই তৃতীয় সারির শেষ ঘরে ৩টি বৃত্ত।" });
+  QS.push({ cat: "ম্যাট্রিক্স", q: "? এর জায়গায় কোনটি বসবে?", matrix: [
+      svg(shapeN(0, false)), svg(shapeN(0, true)), svg(shapeN(0, false)),
+      svg(poly(4, true)), svg(poly(4, false)), svg(poly(4, true)),
+      svg(poly(3, false)), svg(poly(3, true)), qmark()],
+    options: [svg(poly(3, false)), svg(poly(3, true)), svg(poly(4, false)), svg(circle(false))],
+    why: "প্রতি সারিতে একই আকৃতি, আর রং ছাড়া ও রং করা পালা করে আসছে। তৃতীয় সারি: ফাঁকা, রং করা, তাই শেষটি ফাঁকা ত্রিভুজ।" });
+  QS.push({ cat: "ম্যাট্রিক্স", q: "তীরের নিয়ম দেখে ? এর জায়গায় কোনটি বসবে?", matrix: [
+      svg(arrow(0)), svg(arrow(90)), svg(arrow(180)),
+      svg(arrow(90)), svg(arrow(180)), svg(arrow(270)),
+      svg(arrow(180)), svg(arrow(270)), qmark()],
+    options: [svg(arrow(0)), svg(arrow(270)), svg(arrow(180)), svg(arrow(90))],
+    why: "প্রতি ঘরে ডানে গেলে তীর ৯০° ঘোরে, নিচে গেলেও ৯০° ঘোরে। ২৭০° এর পরের ঘর ৩৬০° = ০°, অর্থাৎ উপরের দিকে।" });
+
+  // E. Mirror and water images
+  add("আয়নার প্রতিবিম্ব", "চিত্রের ডান পাশে একটি খাড়া আয়না রাখলে প্রতিবিম্ব কেমন দেখাবে?", [letterF(0) + '<line x1="94" y1="5" x2="94" y2="95" stroke="#c8312b" stroke-width="3" stroke-dasharray="6 4"/>'],
+    [letterF(0, true), letterF(0), letterF(0, false, true), letterF(180)], "খাড়া আয়নায় বাম-ডান উল্টে যায়, উপর-নিচ একই থাকে। তাই ‘F’ এর হাত দুটি বাম দিকে চলে যায়।");
+  add("জলের প্রতিবিম্ব", "চিত্রের নিচে পানি থাকলে পানিতে প্রতিবিম্ব কেমন দেখাবে?", [letterF(0) + '<line x1="5" y1="94" x2="95" y2="94" stroke="#2d7fb8" stroke-width="3" stroke-dasharray="6 4"/>'],
+    [letterF(0, false, true), letterF(0, true), letterF(180), letterF(0)], "জলের প্রতিবিম্বে উপর-নিচ উল্টে যায়, বাম-ডান একই থাকে। তাই ‘F’ এর হাত দুটি নিচের দিকে, ডান পাশেই থাকে।");
+  add("আয়নার প্রতিবিম্ব", "খাড়া আয়নায় এই তীরের প্রতিবিম্ব কোনটি?", [arrow(45) + '<line x1="94" y1="5" x2="94" y2="95" stroke="#c8312b" stroke-width="3" stroke-dasharray="6 4"/>'],
+    [arrow(315), arrow(45), arrow(135), arrow(225)], "আয়নায় ডান-উপরের দিক বাম-উপরের দিক হয়ে যায়। ৪৫° এর প্রতিবিম্ব ৩১৫°।");
+
+  // F. Analogy
+  QS.push({ cat: "সম্পর্ক (Analogy)", q: "প্রথম জোড়ার সম্পর্ক দেখে ? এর জায়গায় কোনটি বসবে?", analogy: [svg(poly(4, false)), svg(poly(4, true)), svg(poly(3, false)), qmark()],
+    options: [svg(poly(3, true)), svg(poly(3, false)), svg(poly(4, true)), svg(circle(true))],
+    why: "প্রথম জোড়ায় একই আকৃতি ফাঁকা থেকে রং করা হয়েছে। তাই ফাঁকা ত্রিভুজ → রং করা ত্রিভুজ।" });
+  QS.push({ cat: "সম্পর্ক (Analogy)", q: "প্রথম জোড়ার সম্পর্ক দেখে ? এর জায়গায় কোনটি বসবে?", analogy: [svg(arrow(45)), svg(arrow(225)), svg(letterF(0)), qmark()],
+    options: [svg(letterF(180)), svg(letterF(0, true)), svg(letterF(90)), svg(letterF(0, false, true))],
+    why: "প্রথম জোড়ায় তীরটি ১৮০° ঘোরানো হয়েছে (ডান-উপর থেকে বাম-নিচ)। আয়না বা জলের প্রতিবিম্ব হলে দিক অন্যরকম হতো। তাই ‘F’ কেও ১৮০° ঘোরাতে হবে।" });
+
+  root.NONVERBAL = QS;
+})(typeof window !== "undefined" ? window : globalThis);
+
+(function () {
+  var BN = "০১২৩৪৫৬৭৮৯", L = ["ক", "খ", "গ", "ঘ"];
+  function bn(n) { return String(n).replace(/\d/g, function (d) { return BN[d]; }); }
+  var list = document.getElementById("list"), score = document.getElementById("score"), right = 0, done = 0;
+  function upd() { score.textContent = "সঠিক: " + bn(right) + " / উত্তর দিয়েছেন: " + bn(done) + " · মোট " + bn(NONVERBAL.length); }
+  NONVERBAL.forEach(function (q, i) {
+    var card = document.createElement("article"); card.className = "nq";
+    var stem = "";
+    if (q.matrix) stem = '<div class="grid3">' + q.matrix.map(function (c) { return "<div>" + c + "</div>"; }).join("") + "</div>";
+    else if (q.analogy) stem = '<div class="ana"><div>' + q.analogy[0] + "</div><div>" + q.analogy[1] + "</div><span>::</span><div>" + q.analogy[2] + "</div><div>" + q.analogy[3] + "</div></div>";
+    else if (q.frames.length) stem = '<div class="frames">' + q.frames.map(function (f) { return "<div>" + f + "</div>"; }).join("") + "</div>";
+    card.innerHTML = '<div class="head"><span class="cat">' + q.cat + '</span><span class="num">প্রশ্ন ' + bn(i + 1) + "</span></div><h2>" + q.q + "</h2>" + stem;
+    // shuffle options, remembering which one is correct (the first in the data)
+    var order = [0, 1, 2, 3];
+    for (var j = 3; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var t = order[j]; order[j] = order[r]; order[r] = t; }
+    var opts = document.createElement("div"); opts.className = "opts";
+    var why = document.createElement("p"); why.className = "why"; why.hidden = true;
+    order.forEach(function (oi, k) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "opt";
+      b.innerHTML = L[k] + ")" + q.options[oi];
+      b.setAttribute("aria-label", "উত্তর " + L[k]);
+      b.addEventListener("click", function () {
+        if (card.dataset.done) return;
+        card.dataset.done = "1"; done++;
+        var correctK = order.indexOf(0);
+        if (oi === 0) right++;
+        b.classList.add(oi === 0 ? "ok" : "no");
+        opts.children[correctK].classList.add("ok");
+        why.innerHTML = "<b>" + (oi === 0 ? "✓ সঠিক! " : "✗ সঠিক উত্তর: " + L[correctK] + ") ") + "</b>" + q.why;
+        why.hidden = false; upd();
+      });
+      opts.appendChild(b);
+    });
+    card.appendChild(opts); card.appendChild(why);
+    list.appendChild(card);
+  });
+  upd();
+})();
+</script>
+<a class="wa-float" href="https://wa.me/8801846877898?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%2C%20%E0%A6%85%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%AF%E0%A6%BE%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%BE%20%E0%A6%8F%E0%A6%95%E0%A6%BE%E0%A6%A1%E0%A7%87%E0%A6%AE%E0%A6%BF%E0%A6%B0%20%E0%A6%95%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%B8%20%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%95%E0%A7%87%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener" aria-label="WhatsApp-এ মেসেজ করুন: 01846877898">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.1 16 26.1zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  <span>WhatsApp</span>
+</a>
+</body>
+</html>
