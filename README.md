@@ -62,3 +62,7 @@ English version of the home page (linked from the Bangla menu and footer). The d
 ## Batch start banner
 
 The red banner at the top of `index.html` and `en.html` shows the next batch date and a countdown. To change the date, edit the banner text and `BATCH_START` in the script of both pages. The banner hides itself after the start date.
+
+## Free downloads (`downloads.html`, `assets/pdf/`)
+
+Three free study PDFs: ISSB complete guide, Bangladesh & defence GK sheet, and a 151-question bank with answers and explanations (built from the questions in `tests.html`). To add a new PDF, put it in `assets/pdf/` and copy one of the `<article class="file">` cards in `downloads.html`.
