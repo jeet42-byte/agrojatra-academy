@@ -7,7 +7,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta name="description" content="ISSB নন-ভার্বাল (ছবিভিত্তিক) IQ অনুশীলন: ঘূর্ণন, ধারা, কোনটি আলাদা, ম্যাট্রিক্স, আয়না ও জলের প্রতিবিম্ব — উত্তর ও ব্যাখ্যাসহ।">
 <meta property="og:title" content="ছবিভিত্তিক IQ অনুশীলন · অগ্রযাত্রা একাডেমি">
-<meta property="og:description" content="ISSB নন-ভার্বাল IQ-এর ২০টি প্রশ্ন, উত্তর ও ব্যাখ্যাসহ।">
+<meta property="og:description" content="ISSB নন-ভার্বাল IQ-এর ৩০টি প্রশ্ন, উত্তর ও ব্যাখ্যাসহ।">
 <meta property="og:image" content="https://jeet42-byte.github.io/agrojatra-academy/assets/agrojatra-cover.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,10 +135,10 @@ body::after { content: ""; display: block; height: 76px; }
   <section>
     <p class="eyebrow">Non-verbal IQ</p>
     <h1 style="font-size:2.3rem">ছবিভিত্তিক IQ অনুশীলন</h1>
-    <p class="lede">ISSB-র নন-ভার্বাল IQ টেস্টের ধাঁচে ২০টি প্রশ্ন: ঘূর্ণন, ধারা, কোনটি আলাদা, ম্যাট্রিক্স, আয়না ও জলের প্রতিবিম্ব এবং সম্পর্ক। উত্তরে চাপ দিলেই সঠিক উত্তর ও ব্যাখ্যা দেখতে পাবেন।</p>
+    <p class="lede">ISSB-র নন-ভার্বাল IQ টেস্টের ধাঁচে ৩০টি প্রশ্ন: ঘূর্ণন, ধারা, কোনটি আলাদা, ম্যাট্রিক্স, আয়না ও জলের প্রতিবিম্ব এবং সম্পর্ক। উত্তরে চাপ দিলেই সঠিক উত্তর ও ব্যাখ্যা দেখতে পাবেন।</p>
     <div class="tip" style="border-left:4px solid var(--accent);padding:8px 14px;background:var(--surface)"><b>কৌশল:</b> প্রথমে দেখুন কী বদলাচ্ছে: দিক (ঘূর্ণন), সংখ্যা, রং, নাকি আকৃতি। তারপর একই নিয়ম পরের ঘরে বসান। আসল পরীক্ষায় সময় কম, তাই প্রতি প্রশ্নে ৩০–৪০ সেকেন্ডের বেশি দেবেন না।</div>
   </section>
-  <p class="score" id="score">সঠিক: ০ / উত্তর দিয়েছেন: ০ · মোট ২০</p>
+  <p class="score" id="score">সঠিক: ০ / উত্তর দিয়েছেন: ০ · মোট ৩০</p>
   <section id="list" style="gap:16px"></section>
   <section>
     <div class="cta">
@@ -280,6 +280,33 @@ body::after { content: ""; display: block; height: 76px; }
   QS.push({ cat: "সম্পর্ক (Analogy)", q: "প্রথম জোড়ার সম্পর্ক দেখে ? এর জায়গায় কোনটি বসবে?", analogy: [svg(arrow(45)), svg(arrow(225)), svg(letterF(0)), qmark()],
     options: [svg(letterF(180)), svg(letterF(0, true)), svg(letterF(90)), svg(letterF(0, false, true))],
     why: "প্রথম জোড়ায় তীরটি ১৮০° ঘোরানো হয়েছে (ডান-উপর থেকে বাম-নিচ)। আয়না বা জলের প্রতিবিম্ব হলে দিক অন্যরকম হতো। তাই ‘F’ কেও ১৮০° ঘোরাতে হবে।" });
+
+  // --- Set 2 (added 21 Oct) ---
+  add("ধারা (ঘূর্ণন)", "বর্গের ভেতরের বিন্দুটি কোন নিয়মে সরছে? পরের চিত্রটি কোনটি?", [dotIn(4, 0, 0), dotIn(4, 1, 0), dotIn(4, 2, 0), Q],
+    [dotIn(4, 3, 0), dotIn(4, 0, 0), dotIn(4, 1, 0), dotIn(4, 2, 0)], "বিন্দুটি প্রতিবার ঘড়ির কাঁটার দিকে পরের কোণে যাচ্ছে। চতুর্থ কোণে যাবে।");
+  add("ধারা (ঘূর্ণন)", "রং করা অংশটি কোন দিকে ঘুরছে? পরের চিত্রটি কোনটি?", [half(0), half(270), half(180), Q],
+    [half(90), half(0), half(270), half(45)], "এবার রং করা অংশ ঘড়ির কাঁটার উল্টো দিকে ৯০° করে ঘুরছে: বাম → নিচ → ডান → উপর।");
+  add("ধারা (সংখ্যা)", "রেখার সংখ্যা দেখে পরের চিত্রটি বের করুন।", [lines(1), lines(3), lines(5), Q],
+    [lines(7), lines(6), lines(8), lines(4)], "প্রতিবার ২টি করে রেখা বাড়ছে: ১, ৩, ৫, ৭।");
+  add("ধারা (সংখ্যা)", "আকৃতি ও রং দুটোই বদলাচ্ছে। পরের চিত্রটি কোনটি?", [poly(3, false), poly(4, true), poly(5, false), Q],
+    [poly(6, true), poly(6, false), poly(5, true), poly(7, true)], "বাহু প্রতিবার ১টি করে বাড়ছে (৩, ৪, ৫, ৬), আর ফাঁকা ও রং করা পালা করে আসছে। তাই রং করা ষড়ভুজ।");
+  add("কোনটি আলাদা", "কোন চিত্রটি অন্যগুলোর সাথে মেলে না?", [],
+    [circle(true), half(0), half(90), half(180)], "অন্য তিনটি বৃত্তের অর্ধেক রং করা, শুধু এটি পুরো রং করা।");
+  add("কোনটি আলাদা", "কোন চিত্রটি অন্যগুলোর সাথে মেলে না?", [],
+    [dotIn(4, 0, 0), dotIn(3, 0, 0), dotIn(3, 1, 0), dotIn(3, 2, 0)], "অন্যগুলো ত্রিভুজ (বিন্দুর অবস্থান যা-ই হোক), শুধু এটি বর্গ।");
+  QS.push({ cat: "ম্যাট্রিক্স", q: "সারি ও কলামের নিয়ম দেখে ? এর জায়গায় কোনটি বসবে?", matrix: [
+      svg(mini(0, 1)), svg(mini(0, 2)), svg(mini(0, 3)),
+      svg(mini(0, 1, true)), svg(mini(0, 2, true)), svg(mini(0, 3, true)),
+      svg(mini(4, 1)), svg(mini(4, 2)), qmark()],
+    options: [svg(mini(4, 3)), svg(mini(4, 3, true)), svg(mini(0, 3)), svg(mini(4, 2))],
+    why: "কলামে সংখ্যা ১, ২, ৩। প্রতিটি সারিতে একই আকৃতি ও একই রং: ফাঁকা বৃত্ত, রং করা বৃত্ত, ফাঁকা বর্গ। তাই ৩টি ফাঁকা বর্গ।" });
+  add("জলের প্রতিবিম্ব", "নিচে পানি থাকলে এই তীরের প্রতিবিম্ব কোনটি?", [arrow(45) + '<line x1="5" y1="94" x2="95" y2="94" stroke="#2d7fb8" stroke-width="3" stroke-dasharray="6 4"/>'],
+    [arrow(135), arrow(315), arrow(45), arrow(225)], "জলের প্রতিবিম্বে উপর-নিচ উল্টে যায়। ডান-উপরের দিকে থাকা তীর ডান-নিচের দিকে (১৩৫°) হয়ে যায়।");
+  add("আয়নার প্রতিবিম্ব", "ডান পাশে খাড়া আয়না রাখলে প্রতিবিম্ব কোনটি?", [dotIn(3, 1, 0) + '<line x1="94" y1="5" x2="94" y2="95" stroke="#c8312b" stroke-width="3" stroke-dasharray="6 4"/>'],
+    [dotIn(3, 2, 0), dotIn(3, 1, 0), dotIn(3, 0, 0), dotIn(4, 2, 0)], "খাড়া আয়নায় বাম-ডান উল্টে যায়। ডান-নিচের কোণের বিন্দু বাম-নিচের কোণে চলে যায়।");
+  QS.push({ cat: "সম্পর্ক (Analogy)", q: "প্রথম জোড়ার সম্পর্ক দেখে ? এর জায়গায় কোনটি বসবে?", analogy: [svg(half(0)), svg(half(180)), svg(arrow(90)), qmark()],
+    options: [svg(arrow(270)), svg(arrow(90)), svg(arrow(0)), svg(arrow(180))],
+    why: "প্রথম জোড়ায় চিত্রটি ১৮০° ঘুরে উল্টো দিকে গেছে (বাম → ডান)। তাই ডানমুখী তীর হবে বামমুখী।" });
 
   root.NONVERBAL = QS;
 })(typeof window !== "undefined" ? window : globalThis);
